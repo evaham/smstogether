@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>카카오 친구톡 신청</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+    *{box-sizing: border-box; color:#444}
+    body{font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; background: #f1f3f5}
+    .text_center{text-align: center}
+    .box__wrap{width:700px; margin:50px auto; padding: 20px 15px; border:1px solid #ddd; border-radius: 5px; background:  #fff;}
+    .hr_comm{border:none; height: 3px; background: #ffdc00}
+    .tit {font-size: 22px; letter-spacing: -1px; vertical-align: top}
+    .icon {display: inline-block; margin:-4px 10px 0 0; vertical-align: top}
+    .infobox__txt{ position:relative; margin: 15px 0; padding-left: 80px; font-size: 16px; font-weight: bold; line-height: 1.2;}
+    .infobox__icon{position:absolute; top:0; left: 0; padding: 10px 20px; border-radius: 5px; background:#e03131; color:#fff }
+    .infobox__link {display: inline-block; color:#0044ff; text-decoration: underline}
+
+
+    .tbl_comm { width: 100%; max-width: 100%; margin: 15px 0; border-spacing: 0; border-collapse: collapse; margin-top:5px;  background-color: transparent; box-sizing: border-box;}
+    .tbl_comm tr th{padding: 10px; border:1px solid #ddd; font-size: 12px; font-weight: normal; background:#fafafa; text-align:left; line-height: 1.4;vertical-align: inherit; color:#666}
+    .tbl_comm tr td{padding: 10px; border:1px solid #ddd; text-align:left; line-height: 1.4;vertical-align: inherit;}
+    
+    .info__txt{margin: 5px 0 0; font-size:13px; color:#666;}
+    .tf_comm {display: inline-block;height: 30px;padding: 3px 5px;line-height: 1.4;border: 1px solid #bbb;color: #333;box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);box-sizing: border-box;}
+    .opt_comm {display: inline-block;height: 30px;padding: 3px 5px;line-height: 1.4;border: 1px solid #bbb;color: #333;box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);box-sizing: border-box;}
+    .btn_comm {display: inline-block; padding: 4px 15px;border: 1px solid #f4d544;border-radius: 3px; font-size: 13px; background: #ffdf48;color: #333;cursor: pointer;letter-spacing: -1px;box-sizing: border-box;}
+    .btn_comm:hover {background: #f4d202;}
+    .pre_comm { display: block; overflow-y:scroll; max-height: 300px; margin: 15px 0; padding: 10px; border:1px solid #ddd; border-radius: 5px; font-size: 12px; white-space: pre-wrap; word-break: break-all; word-wrap:break-word;}
+    .checkbox_comm {display: inline-block; margin: 15px 0}
+    .btn_big {display: inline-block; padding: 10px 25px;border: 1px solid #f4d544;border-radius: 3px; font-size: 16px; font-weight: bold; background: #ffdf48;color: #333;cursor: pointer;letter-spacing: -1px;box-sizing: border-box;}
+    .btn_big:hover {background: #f4d202;}
+</style>
+<body class="bg_gray">
+    <form>
+        <div class="box__wrap">
+            <h1 class="tit"><span class="icon"><img src="./img/icon_kakao.png" /></span>카카오 친구톡 서비스 신청</h1>
+            <hr class="hr_comm" />
+            <div>
+                <p class="infobox__txt"><span class="infobox__icon">필수</span>카카오 친구톡 서비스를 이용하시려면 카카오 플러스친구 계정이 필요합니다.<br />플러스친구에 가입 해 주세요. <a class="infobox__link" href="#">[플러스친구 가입하기]</a></p>
+            </div>
+            <table class="tbl_comm">
+                <colgroup>
+                    <col style="width:130px" />
+                </colgroup>
+                <tr>
+                    <th>
+                        플러스친구 ID
+                    </th>
+                    <td>
+                        <input type="text" class="tf_comm" />
+                        <p class="info__txt">
+                            - @를 제외한 플러스친구 ‘검색용 아이디’ 를 입력해주세요.<br />(카카오 플러스친구 관리자센터> 관리> 상세설정에서 확인가능)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>카테고리 선택</th>
+                    <td>
+                        <select class="opt_comm">
+                            <option>1차 분류 선택</option>
+                        </select>
+                        <select class="opt_comm">
+                            <option>
+                                2차 분류
+                            </option>
+                        </select>
+                        <select class="opt_comm">
+                            <option>
+                                3차 분류
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>사업자 등록번호</th>
+                    <td>
+                        137-82-00111
+                    </td>
+                </tr>
+                <tr>
+                    <th>휴대번호 입력</th>
+                    <td>
+                        <input type="text" class="tf_comm" />
+                        <button type="button" class="btn_comm">인증번호 받기</button>
+                        <p class="info__txt">- 플러스친구 관리자 가입 시, 인증 받은 휴대폰번호를 입력하세요 (-하이픈 제외)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>인증번호 입력</th>
+                    <td>
+                        <input type="text" class="tf_comm" />
+                        <button type="button" class="btn_comm">인증</button>
+                    </td>
+                </tr>
+            </table>
+            <pre class="pre_comm">
+서비스 약관
+제1조 [목적]
+본 이용약관은 ㈜투게더스에서 제공하는 문자발송서비스를 이용하는 조건 및 절차 기타 제반사항을 규정합니다. 본 약관에 규정되지 않은 사항은 전기통신사업법, 정보통신망 이용 촉진 및 정보보호 등에 관한 법률, 기타 관계
+법령에 따릅니다.
+
+            </pre>
+            <div class="text_center">
+                <label class="checkbox_comm">
+                    <input type="checkbox"> 약관 내용을 숙지하였으며 동의합니다.
+                </label>
+                <br />
+                <button type="submit" class="btn_big">신청하기</button>
+            </div>
+
+        </div>
+    </form>
+</body>
+
+</html>
+
+
+<!--
+
+<body>
+    <form method="post" action="./agree_TogetherMS.aspx?pm=2000329967085800000033042906662701650561" id="form1">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="/wEPDwUKMTAyMTk5MzY1Ng9kFgICAw9kFg4CAQ8WAh4EVGV4dAUMMTM3LTgyLTAwMTExZAICDxYCHwAFBDk5OTlkAgMPFgIfAAUMUE9T7Yis6rKM642UZAIEDxYCHwAFCeuMgO2RnOyekGQCBQ8PZBYCHgdvbmtleXVwBSNDb21tb25Db250cm9sbGVyLmZuRGVsZWdhdGVJbnB1dCgpO2QCCA8WAh8ABQxQT1PtiKzqsozrjZRkAgkPFgIfAAUJ64yA7ZGc7J6QZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUIY2hrQWdyZWX0pSOB8lnm8dJVnFxUJb4+rDGyXcjhtU+3ntC8a2/ENA==" />
+        </div>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var theForm = document.forms['form1'];
+            if (!theForm) {
+                theForm = document.form1;
+            }
+            function __doPostBack(eventTarget, eventArgument) {
+                if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                    theForm.__EVENTTARGET.value = eventTarget;
+                    theForm.__EVENTARGUMENT.value = eventArgument;
+                    theForm.submit();
+                }
+            }
+//]]>
+        </script>
+
+
+        <script
+            src="/WebResource.axd?d=ihsKPkrlSt38YVQchB3x9Fq1faf1Rwtjw0ScQBAuNAkX2FOnlhsLT-0wqhbVLAaP-Q9fyU4yOdPEZfwUxfoXHYUE_on6CHX5OtnSBqEbsPs1&amp;t=636065509469690049"
+            type="text/javascript"></script>
+
+
+        <script
+            src="/ScriptResource.axd?d=etID-NLvhuQZG8bf-TwVo8SYrqtOCnMAhmYjVF3HSLlYc0-USIJkYgvRK8yBVakqdlslYdHXJ8y6a7ruzYVxaS5jlNfrgjRAXqDrdd1Cv5vBs6Tvmx7D4Jo-UmsBMvLW-wNgttPx54AqAwrHsDEN0fFYGqu94C_8GZ2X-oHvprg1&amp;t=4794f07b"
+            type="text/javascript"></script>
+        <script
+            src="/ScriptResource.axd?d=8-lXE_pd_HR4wqrO2YpWZQodGNK9vLHR5Fzr2kMUpOqUhGkNYdNypmn0o6zFu2D65a5rP_vAXTmxN7PbJ4vrpT7uPobQUUqWWp319n1B6l9LXr2KfcV1qO-IaJRlLXzshN5lnwYRZEfdNzMOi7XvHZxNEhUcTddWAJnN0rhvrbed0qdPQPaDQzi1mbc3D8Jq0&amp;t=4794f07b"
+            type="text/javascript"></script>
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="EFBE2C36" />
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+                value="/wEdAAa1OAbrje8snDCM7x+t6ZGA7cGfdD6Yj+0CIwPkdvcOJpNH4nLF75ht5ocWKTqSqDftlUcovVnetq/UsKQVWaooYXNvPUCebruC6aAFJ0ruduv0no2Y94uwBxKsvnYf+YeWX1hvz/4bphfgDH/2YQ71/lzcs52EZeqg+khkSzyccw==" />
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUPAgree', 'UPAgree'], [], [], 90, '');
+//]]>
+        </script>
+
+        <script type="text/javascript">
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+            Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(BeginRequestHandler);
+            var senderId = '';
+            function BeginRequestHandler(sender, args) {
+                senderId = args.get_postBackElement().id;
+            }
+            function EndRequestHandler(sender, args) {
+                if (args.get_error() != undefined) {
+                    var errorMessage = args.get_error().message;
+                    args.set_errorHandled(true);
+                    alert(errorMessage.replace('Sys.WebForms.PageRequestManagerServerErrorException: ', ''));
+
+                    if (senderId == 'btnAgree') {
+                        $("#btnAgree").attr('disabled', false);
+                    }
+                } else {
+                    var script = '';
+                    if (senderId == 'btnAgree') {
+                        var obj = $("#hdJScript");
+                        if (obj !== undefined && obj !== null) script = obj.val();
+                    }
+                    if (script !== '') {
+                        eval(script);
+                    }
+                }
+            }
+        </script>
+        <h1 class="text-center">투게더문자서비스 이용신청</h1>
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h2 class="tit_head">
+                        <img alt="Brand" width="20" height="20" src="img/icon_togethers.png" />
+                        <span class="txt_title">신청 가맹점 정보</span>
+                    </h2>
+                    <div class="row">
+                        <label class="col-sm-4"><span class="pull-right">사업자번호</span></label>
+                        <p class="col-sm-8">137-82-00111</p>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-4"><span class="pull-right">점포코드</span></label>
+                        <p class="col-sm-8">9999</p>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-4"><span class="pull-right">점포명</span></label>
+                        <p class="col-sm-8">POS투게더</p>
+                    </div>
+                    <div class="row">
+                        <label class="col-sm-4"><span class="pull-right">대표자</span></label>
+                        <p class="col-sm-8">대표자</p>
+                    </div>
+                    <div class="alert alert-info" role="alert">
+                        <p><span class="glyphicon glyphicon-asterisk"></span> 가맹점에서 사용하는 유효한 번호로 발신번호 등록가능</p>
+                        <p><span class="glyphicon glyphicon-asterisk"></span> 법인사업자는 법인명의의 번호만 발신번호 등록가능</p>
+                        <p><span class="glyphicon glyphicon-asterisk"></span> 광고문자전송시 광고 표기사항 준수 및 080번호를 부여받아야하며,
+                            080서비스는 유료서비스임</p>
+                    </div>
+                    <hr />
+                    <p class="text-danger"><span class="glyphicon glyphicon-asterisk">
+                        </span> 발신번호 운영담당자가 <mark>대표자가 아닐 경우</mark> 아래 내용을 입력해주세요.<br />
+                        <span class="glyphicon glyphicon-asterisk"></span> 서비스의 운영의 권리와 의무는 <mark>발신번호 담당자</mark>에게
+                        <mark>위임</mark>됩니다.
+                    </p>
+                    <p class="text-danger"></p>
+                    <div class="form-horizontal alert alert-danger">
+                        <p class="box_title">발신번호 운영담당자</p>
+                        <div class="row form-group">
+                            <label class="col-sm-4 control-label"><span class="pull-right">이름</span></label>
+                            <div class="col-sm-8">
+                                <input name="txtDelegate" type="text" maxlength="25" id="txtDelegate"
+                                    class="form-control" placeholder="담당자 이름을 입력해주세요."
+                                    onkeyup="CommonController.fnDelegateInput();" />
+                                <span id="lbMsg" style="color:Red;"></span>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-4 control-label"><span class="pull-right">연락번호</span></label>
+                            <div class="col-sm-8">
+                                <input name="txtDelCel" type="text" maxlength="15" id="txtDelCel" class="form-control"
+                                    placeholder="담당자 연락번호를 입력해주세요" />
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="divDelegate">
+                        <p class="text-center"><b>위 임 장</b></p>
+                        <p class="text-center">
+                            POS투게더마트 대표자 대표자은
+                            운영담당자 <span id="lbDelegate" class="spanDelegate"></span>에게 발신번호 운영을 위임한다.
+                        </p>
+                    </div>
+                    <pre class="pre-scrollable">
+<b>서비스 약관</b>
+
+제1조 [목적] 
+
+본 이용약관은 ㈜투게더스에서 제공하는 문자발송서비스를 이용하는 조건 및 절차 기타 제반사항을 규정합니다. 본 약관에 규정되지 않은 사항은 전기통신사업법, 정보통신망 이용 촉진 및 정보보호 등에 관한 법률, 기타 관계 법령에 따릅니다.
+
+제2조 [용어의 정의]
+
+① ‘문자발송서비스’라 함은, 단문자발송 서비스(SMS), 장문자발송 서비스(LMS), 080수신거부번호 제공서비스, 발신번호 사전등록 서비스 등을 말합니다.
+1. SMS란 90byte의 최대길이를 갖는, 가맹점에서 전달한 회원의 전화번호로 가맹점에서 작성한 문자를 전송하는 서비스입니다. 
+2. LMS란 2000byte의 최대길이를 갖는, 전1호와 같은 내용을 전송하는 서비스입니다.
+3. 080수신거부번호서비스는 정보통신망 이용촉진 및 정보보호등에 관한 법률 제62조에 의한 법정의무사항으로, 고객의 마케팅 정보 수신동의의 철회 또는 문자 수신 중단 등을 고객의 비용 없이 문자발송대상에서 제외하는 서비스입니다.
+4. 발신번호사전등록서비스란 전기통신사업법 제84조의 2에 의한 법정의무사항으로, 사전에 등록한 전화번호만 인터넷 발송 문자메시지의 발신번호로 허용하는 제도에 따라 가맹점의 전화번호를 사전 등록제공하는 서비스입니다. 
+② ‘가맹점’이란 ㈜투게더스와 가맹점 계약을 체결한 매장을 말합니다.
+③ ‘TS머니’란 TS머니 이용약관에 동의하여 문자발송서비스 또는 기타 부가서비스를 결제하기 위한 결제수단을 말합니다. TS머니는 TS머니 이용약관의 규정을 준용합니다. 
+④ ‘불법스팸’이란 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제50조부터 제50조의 8을 위반하여 전송 또는 게시되는 영리목적의 광고성 정보를 말합니다
+                        
+제3조 [문자발송서비스 이용계약의 체결 등] 
+
+① 가맹점은 ㈜투게더스와 투게더가맹점 이용약관에 따른 계약을 체결하고 TS머니 및 TS포인트 이용약관, 문자발송서비스 이용약관에 동의하는 것으로 이용계약을 체결할 수 있습니다.
+② ‘투게더 가맹점 이용약관’에 동의하지 않거나 ‘TS머니 및 TS포인트 이용약관’에 동의하지 않은가맹점은 문자발송서비스 이용약관에 대한 동의가 있어도 문자발송서비스 이용계약을 체결한 것으로 볼 수 없습니다. 
+③ 이용약관에 대한 동의는 투게더 가맹점 신청서의 정보를 토대로 가맹점의 명시적 동의 또는 대리인의 명시적 동의로 가능합니다. 
+④ (주)투게더스는 문자발송서비스이용을 아래의 각호에 해당하는 경우 거부할 수 있습니다. 
+1. 투게더서비스 이용계약 등에 허위의 정보가 있는 경우 
+2. 문자발송서비스를 재판매 등을 목적으로 사용하는 경우
+
+제4조 [약관의 변경] 
+
+① (주)투게더스는 다음 각호의 경우 이용약관을 변경할 수 있습니다. 
+1. 관련법령의 변경으로 인하여 문자발송서비스의 내용 중 일부 또는 전부가 변하는 경우
+2. 문자발송서비스 운영방침의 변경 및 기타 사업상의 변경사항이 있는 경우 
+② 변경된 이용약관은 시행일로부터 최소 30일 이전에 유선안내, SMS안내, 인터넷 게시 등 가맹점이 알 수 있는 방법으로 공시해야 합니다. 
+③ 가맹점은 변경된 약관에 동의하지 않을 수 있으며, 이 경우 문자발송서비스에 제한을 받을 수 있습니다. 
+④ 약관에 대한 동의의 철회는 사용한 서비스에 대하여는 영향을 미치지 않습니다.
+
+제5조 [문자발송서비스 이용기록의 보관] 
+
+① ㈜투게더스는 아래와 같은 목적으로 가맹점에서 발송한 문자발송정보를 수집∙보관하며 서비스의 원활한 이용을 위하여 1년의 보관기간을 갖습니다. 
+1. 계정정보 : 문자발송서비스를 이용한 가맹점의 TS머니 및 기타 정보로 사용자의 발송기록 조회 및 서비스 상담 안내를 위하여 보관합니다. 
+2. 발송내용 : 오발송 또는 법률상 분쟁의 소지가 있는(정보통신망 이용촉진 및 정보보호 등에 관한 법률 제50조부터 제50조의 8까지) 문자발송서비스의 이용기록의 확인을 위하여 보관합니다. 
+3. 발송시간 : 문자발송서비스의 장애진단, 오발송 등의 확인을 위하여 보관합니다.
+4. 발송대상번호 : 문자발송서비스의 장애진단, 오발송 확인, 통신사업자 장애 등의 확인을 위하여 보관합니다. 
+② 보관기관을 경과한 이용기록은 지체없이 삭제되며, 분쟁, 장애처리 등 보관기간의 연장이 필요한 경우에는 해당 가맹점에 그 사실을 고지하고 연장할 수 있습니다.
+
+제6조 [문자발송서비스 제공의 중지] 
+
+① ㈜투게더스는 아래의 각 호에 해당하는 경우 문자발송서비스의 제공을 중지 할 수 있습니다.
+1. 관계법령의 제·개정으로 인하여 문자발송서비스의 지속적 운영이 불가한 때 
+2. 전기통신사업법에 규정된 기간통신사업자가 전기통신서비스를 중지한 때 
+3. 천재, 지변, 사변 등 기타 ㈜투게더스의 영업활동이 더 이상 불가한 때
+② ㈜투게더스는 문자발송서비스 제공의 중지가 있는 경우 지체 없이 가맹점에 해당 내용을 고지하고 문자발송서비스와 관련된 채권 및 채무의 정산한 뒤 문자발송서비스를 중지할 수 있습니다. 문자발송서비스의 중단은 문자발송서비스의 제공을 통하여 발생한 채권의 효력에 영향을 주지 않으며, ‘TS머니 서비스’ 등 관련된 서비스에 효력을 미치지 아니합니다.
+
+제7조 [080수신거부번호 서비스의 제공] 
+
+① 080수신거부번호서비스는 정보통신망 이용촉진 및 정보보호 등에 관한 법률 제62조 에 따라 법정의무사항으로 ㈜투게더스는 가맹점에 한하여 제공합니다.
+② 080수신거부번호서비스는 ㈜투게더스에서 제공하는 080수신거부번호 서비스를 이용 할 수 있으며 타 회사의 080수신거부서비스 이용시에는 문자발송서비스의 이용시 반드시 080수신거부번호를 입력하여야 합니다. 단, 영리성 정보의 제공이 아닌 개인용도의 문자발송서비스 이용시에는 그러하지 않습니다. 
+③ 080수신거부번호서비스의 사용료는 문자발송서비스에 포함되지 않습니다. 
+
+제8조 [발신번호사전등록 서비스의 제공] 
+
+① 발신번호사전등록서비스란 전기통신사업법 제84조의 2에 의거, 거짓으로 표시된 전화번호로 인한 이용자 피해 예방을 위해서 이용고객이 사전에 등록된 발신번호로만 문자발송이 가능하도록 하는 제도입니다.
+1. 인터넷 또는 문자발송시스템을 통해서 문자를 발송하는 매장은 반드시 사전에 발신번호 등록하여야 합니다.
+2. 등록하는 발신번호는 반드시 가맹점주 또는 가맹점이 소유하거나, 소유자로부터 사용권한을 위임받은 번호여야하며, 등록된 발신번호로 전송한 문자가 변작(발신번호변경)으로 의심되어 한국인터넷진흥원(KISA)으로부터 소명 요청을 받을 경우 매장은 3일 이내에 해당 번호의 소유를 증명해야만 합니다.
+3. 미증명시 해당 발신번호로 문자발송이 차단되며 통신서비스 중지, 1억원 이하의 벌금을 부과하게 됩니다.
+② 발신번호사전등록 대상
+1. 문자발송시스템(MGR문자발송창)을 이용해서 고객에게 문자를 발송하는 매장, 
+2. 가맹점에서 사용하는 유효한 번호로 발신번호 등록
+3. 법인사업자는 법인명의의 번호만 발신번호등록
+③ 발신번호 등록방법
+1. 발신번호는 8~11자리 숫자만으로 입력합니다.
+2. 030, 050 번호 등록은 불가합니다.
+3. 15, 16, 18로 시작하는 대표번호는 지역번호를 제외한 8자리만 등록합니다.
+4. 011, 016, 017, 018, 019로 시작하는 번호는 국번이 9로 시작하는 경우 11자리까지, 그외에는 10자리번호여야 합니다.
+5. 010, 0130으로 시작하는 번호는 11자리여야 합니다.
+6. 02로 시작하는 번호는 9자리 또는 10자리여야 합니다.
+7. 02가 아닌 지역번호로 시작하는 번호는 10자리 또는 11자리여야 합니다.
+8. 060, 080으로 시작하는 번호는 10자리, 070은 11자리여야 합니다.
+9. 국번은 0000이 될수 없습니다.
+ 
+제9조 [한시적 개인정보관리 위수탁계약의 간주] 
+
+① ㈜투게더스는 문자발송서비스의 원활한 이용지원 및 장애처리를 위하여 가맹점의 회원정보 등을 원격지원 프로그램 등으로 조회할 수 있습니다. 
+② 전 ①항의 경우 ㈜투게더스는 가맹점과 개인정보관리 위수탁 계약이 한시적으로 존재하는 것으로 간주합니다. 계약의 시기는 가맹점의 요청에 따라 회원정보 등을 조회한 때이며, 종기는 원격지원 프로그램 등이 종료한 때로 합니다.
+③ ㈜투게더스는 어떠한 경우에도 가맹점의 의사에 반하여 회원의 개인정보에 접근할 수 없습니다.
+
+제10조 [문자발송서비스의 이용기간 및 시기] 
+
+① 가맹점은 전산상의 장애가 없는 한 24시간, 365일 연중무휴료 문자발송서비스를 이용할 수 있습니다. 
+② 전 ①항의 장애가 발생시 (주)투게더스는 지체없이 가맹점에 이를 고지하여 가맹점의 문자발송서비스의 이용에 불편이 없도록 합니다. 
+③ 장애의 고지는 장애가 있음을 안 때로부터 1일 24시간 이내에 해야 하며, 천재, 지변, 사변 등으로 인하여 고지가 불가능할 경우에는 고지가 가능하게 된 때로부터 1일 24시간 이내에 해야 합니다. 
+④ 문자발송서비스의 이용은 제6조에 의한 중지, 가맹점의 명시적 사용중지의사, 또는 약관동의의 철회가 있기 전까지 기간의 지정 없이 이용 할 수 있습니다.
+
+제11조 [문자발송서비스의 이용방법] 
+
+① 가맹점은 ‘TS머니 및 TS포인트 이용약관’에 따라 충전된 TS머니로 문자발송서비스를 자유로이 이용할 수 있습니다. 
+② (주)투게더스는 가맹점의 문자발송서비스의 이용과 관련하여 이용규모, 이용방법 등에 관여하지 않습니다. 
+③ (주)투게더스는 가맹점의 문자발송서비스의 이용으로 인한 위법행위, 불법행위에 대하여 책임을 부담하지 않습니다. 
+④ (주)투게더스는 가맹점의 문자발송서비스의 적법한 이용을 위하여 부가서비스 등의 제공 및 안내를 주관하거나 보조할 수 있습니다. 
+⑤ 전 ②항과 관련하여 각 이동통신사 및 기간통신사업자 기타 관계기관에 의한 제한이 있을 수 있습니다.
+
+제12조 [문자발송서비스 비용의 지불, 환불 등] 
+
+① 문자발송서비스는 TS머니 및 TS포인트 약관에 따라 비용을 지불하며 환불을 신청할 수 있습니다. 
+② 환불 수수료는 TS머니 및 TS포인트 약관에 의한 환불 수수료를 적용합니다. 
+③ TS머니는 가맹점이 언제든 환불 요청 할 수 있습니다. 이 경우 ㈜투게더스는 TS머니의 잔액에서 환불에 필요한 작업 등을 고려하여 잔여 TS머니의 10%, 최대 금액 5만원을 넘지 않도록 하여 환불 수수료를 공제하고 지급합니다. 
+④ 현금으로의 환불은 TS머니 잔액에 대하여만 가능하며, TS포인트는 환불의 대상이 되지 않습니다. 
+⑤ 아래 각호에 해당하는 경우에는 환불이 불가합니다. 
+1. 환불 금액이 최저 환불 수수료인 1,000원 미만인 경우
+2. 가맹점이 고의로 ㈜투게더스에서 제공하는 서비스에 손해를 발생시키거나 손실분을 발생시킨 경우 
+3. TS머니를 불법적 용도로 사용한 경우
+⑥ ㈜투게더스는 가맹점의 환불요청이 있을때 영업일을 기준으로 7일 이내에 환불합니다. 단, 가맹점의 정보변경이나 수납확인이 필요한 결제수단으로 결제된 TS머니는 정보변경확인일 또는 수납확인일로부터 영업일을 기준으로 7일 이내에 환불합니다.
+
+제13조 [문자발송서비스 제공자의 의무] 
+
+① (주)투게더스는 가맹점의 문자발송서비스의 이용편의를 위해 지속적, 안정적으로 서비스를 제공해야 합니다. 
+② 가맹점의 문자발송서비스와 관련하여 (주)투게더스에 보관되는 정보는 그 형태를 불문하고 철저하게 보안을 유지하며 가맹점의 명시적 동의없이 제3자에게 게시, 제공하지 않습니다. 제3자에게 게시 또는 제공하는 경우 게시 또는 제공되는 정보의 범위 및 내용, 게시 및 제공의 기간, 목적, 제3자의 신원을 명확하게 규정하여 가맹점에 공개해 야 합니다. 단, 아래의 각호에 해당하는 경우에는 수집된 정보를 제공할 수 있습니다. 
+1. 법률의 규정에 의한 국가기관의 요구에 의한 게시 및 제공 
+2. 위법행위, 불법행위로 수사기관 등의 의뢰로 인한 제공 
+③ (주)투게더스는 문자발송서비스의 제공과 관련하여 법령 및 관계기관의 고시등을 철저히 준수해야 하며, 법령 및 고시 등으로 인한 서비스의 일부 또는 전부의 변화가 있을 경우에는 가맹점에 이를 고지하고, 서비스 이용과 관련한 가맹점의 의견을 존중해야 합니다. 
+④ (주)투게더스는 어떠한 경우에도 법령 및 고시를 위반한 형태로 서비스를 제공하거나 서비스 이용방식을 제공하지 않습니다. 
+⑤ (주)투게더스는 가맹점의 적법한 문자발송서비스의 이용을 위하여 관련된 부가서비스 및 문자발송서비스 시스템을 제공해야 하며, 제공이 불가능한 경우 가맹점의 적법한 서비스 이용방법을 안내해야 합니다.
+
+제14조 [문자발송서비스 이용자의 의무] 
+
+① 가맹점은 제1조에 따른 법령 및 이용약관을 준수해야 합니다. 
+② 가맹점은 (주)투게더스에서 제공하는 문자발송서비스를 이용하여 위법행위 및 불법 행위를 하지 않습니다. 
+③ 가맹점은 문자발송서비스에 필요한 수신자의 정보를 적법하게 수집하고 보관·관리하여야 합니다. 
+④ 가맹점은 (주)투게더스에서 제공하는 문자발송서비스를 이용하는 과정에서 얻은 정보를 (주)투게더스의 동의없이 상업적 이용 및 제3자 공개를 할 수 없습니다.
+
+제15조 [문자발송서비스의 이용제한] 
+
+① (주)투게더스는 가맹점의 위법, 불법행위가 감지된 경우 이용을 가맹점에 사전 안내 없이 긴급하게 제한할 수 있습니다. 
+② (주)투게더스는 가맹점과의 채권관계의 정리가 필요하거나 및 제3자 채권관계자의 요청에 의하여 문자발송서비스의 이용을 제한할 수 있습니다. 
+③ 전 ②항에 의한 이용의 제한시에는 가맹점에 관련한 내용을 사전 공개해야 하며 가맹점과의 채권관계 정리로 인하여 이용제한을 하기 전에 가맹점의 구제방안을 안내해야 합니다. 
+④ 제①항 및 제②항의 이용제한 원인이 해소된 때에는 (주)투게더스는 지체없이 이용 제한을 해제해야 합니다. 단, 원인 해소의 증명이 필요한 때에는 가맹점 및 제3자에게 관련 서류 등을 요청할 수 있습니다.
+
+제16조 [면책 및 손해배상] 
+
+① (주)투게더스는 가맹점의 위법, 불법한 문자발송서비스의 이용과 관련하여 당사자 혹은 제3자에 대한 책임을 부담하지 않습니다. 
+② 가맹점은 문자발송서비스의 이용으로 인하여 (주)투게더스 및 제3자에게 발생한 손해 또는 손실을 배상 또는 보상하여야 합니다. 
+③ (주)투게더스는 가맹점의 서비스 오용, 남용으로 인한 손해 또는 손실에 대하여 책임을 부담하지 않습니다. 
+④ (주)투게더스는 사전에 공지된 서비스의 한시적 이용중지, 이용불가 등에 대하여 책임을 부담하지 않습니다. 
+⑤ (주)투게더스는 천재, 지변, 사변 등 기타 이와 유사한 사례로 서비스의 이용장애, 이용중지, 이용불가로 인한 손해에 대하여 책임을 부담하지 않습니다.
+
+제17조 [분쟁의 해결 및 관할] 
+
+① (주)투게더스와 가맹점은 문자발송서비스 및 부가서비스의 이용과 관련하여 분쟁이 발생할 경우 상호 협력하여 해결하도록 노력해야 합니다.
+② 전 ①항에 따른 협력에도 분쟁의 계속시에는 관할법원을 (주)투게더스의 소재지를 기준으로 합니다.
+
+                    </pre>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p>위 약관의 내용을 충분히 숙지하였으며 이에 동의합니다.</p>
+                        </div>
+                        <div id="divCheck" class="col-sm-4">
+                            <div id="check_agree" class="col-sm-4 text-right">
+                                <div class="btn-group">
+                                    <span class="btn btn-lg btn-default"><input id="chkAgree" type="checkbox"
+                                            name="chkAgree" /><label for="chkAgree">약관동의</label></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <p class="text-danger sr-only text-center">투게더 문자 서비스 약관동의를 체크해주세요.</p>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <div id="UPAgree">
+
+                        <input type="submit" name="btnAgree" value="신청"
+                            onclick="return CommonController.fnAgreeCheck();" id="btnAgree"
+                            class="btn btn-lg btn-default" style="width:100px;" />
+                        <input type="hidden" name="hdJScript" id="hdJScript" />
+
+                    </div>
+                    <div id="UPGAgree" style="display:none;">
+                        처리중입니다. 잠시만 기다려주세요.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+            Sys.Application.add_init(function () {
+                $create(Sys.UI._UpdateProgress, { "associatedUpdatePanelId": "UPAgree", "displayAfter": 500, "dynamicLayout": true }, null, null, $get("UPGAgree"));
+            });
+//]]>
+        </script>
+    </form>
+</body>
+
+</html>

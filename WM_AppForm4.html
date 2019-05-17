@@ -1,0 +1,852 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css?123123" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <style type="text/css">
+        .btn_refresh {
+            width: 86px;
+            height: 29px;
+            border: none;
+            background: url(./img/img_button2.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .btn_refresh:hover {
+            background: url(./img/img_button2_hover.png) no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <div id="UPTabOuter">
+            <div class="tab_menu">
+                <div class="tabouter">
+                    <ul>
+                        <li>
+                            <a class="link_pagetitle" href="./WM_AppForm.html">투게더문자</a>
+                        </li>
+                        <li class="active">
+                            <a class="link_pagetitle" href="#">카카오 친구톡</a>
+                        </li>
+                        <li>
+                            <a id="linkPhone" class="link_pagetitle" href="javascript:__doPostBack(&#39;linkPhone&#39;,&#39;&#39;)">폰문자</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap_top">
+            <div class="wrap_groupbox">
+                
+                <div class="wrap_left" style="width:995px"><!-- width 직접제어 -->
+                    <div class="tab_submenu">
+                        <div class="tabs">
+                            <ul class="level1">
+                                <li>
+                                    <a class="level1 tab" href="./WM_AppForm2_2.html" style="width:95px">메시지작성</a>
+                                </li>
+                                <li>
+                                    <a class="level1 tab" href="./WM_AppForm3.html" style="width:95px">전송대상</a>
+                                </li>
+                                <li>
+                                    <a class="level1 tab selected" href="./WM_AppForm4.html" style="width:95px">전송내역</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search__box">
+                        <span class="search__txt">전송기간</span>
+                        <input type="text" class="search__tf" value="2019-03-20" />
+                        <span class="search__txt">~</span>
+                        <input type="text" class="search__tf" value="2019-04-20" />
+                        <input type="button" class="search__btn" value="조회" />
+                    </div>
+                    <div class="target_scroll">
+                        <table class="tblList">
+                            <colgroup>
+                                <col style="width:40px;" />
+                                <col style="width:80px;" />
+                                <col style="width:100px;" />
+                                <col style="width:250px;" />
+                                <col style="width:85px;" />
+                                <col style="width:60px;" />
+                                <col style="width:60px;" />
+                                <col style="width:95px;" />
+                                <col style="width:auto;" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="text_left">No</th>
+                                    <th class="text_left">발송타입</th>
+                                    <th class="text_left">발송일시</th>
+                                    <th class="text_left">메시지 내용</th>
+                                    <th class="text_left">총 발송건수</th>
+                                    <th class="text_left">성공</th>
+                                    <th class="text_left">실패</th>
+                                    <th class="text_left">대체발송건수</th>
+                                    <th class="text_left">대체발송수단</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#" onclick="javascript:kakaoPopup()">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()">1000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                                <tr>
+                                    <td>50</td>
+                                    <td>이미지</td>
+                                    <td>04/20 17:30</td>
+                                    <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                            세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                    <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                    <td class="text_green">700</td>
+                                    <td class="text_red">300</td>
+                                    <td class="text_blue">300</td>
+                                    <td>이미지링크</td>
+                                </tr>
+                    
+                            </tbody>
+                    
+                        </table>
+                        <input type="button" class="kakao2__btnmore" value="외 55명 모두표시" />
+                    </div>
+                </div>
+
+                <div class="kakao2" style="display:none">
+                    <!-- 전송내역 시작 -->
+                    <div class="kakao2__fullbox">
+                        <div class="kakao2__searchbox">
+                            <span>전송기간</span>
+                            <input type="text" class="kakao2__searchtf" value="2019-03-20" /> ~ <input type="text"
+                                class="kakao2__searchtf" value="2019-04-20" />
+                            <input type="button" class="kakao2__searchbtn" value="조회" />
+                        </div>
+                        <div class="kakao2__tbllistwrap">
+                            <table class="kakao2__tbllist">
+                                <colgroup>
+                                    <col style="width:40px;" />
+                                    <col style="width:80px;" />
+                                    <col style="width:100px;" />
+                                    <col style="width:250px;" />
+                                    <col style="width:80px;" />
+                                    <col style="width:60px;" />
+                                    <col style="width:60px;" />
+                                    <col style="width:85px;" />
+                                    <col style="width:auto;" />
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>발송타입</th>
+                                        <th>발송일시</th>
+                                        <th>메시지 내용</th>
+                                        <th>총 발송건수</th>
+                                        <th>성공</th>
+                                        <th>실패</th>
+                                        <th>대체발송건수</th>
+                                        <th>대체발송수단</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+                                    <tr>
+                                        <td>50</td>
+                                        <td>이미지</td>
+                                        <td>04/20 17:30</td>
+                                        <td><a class="kakao2__link kakao2__link--mssg" href="#">(광고)대박마트 목,금요일
+                                                세일!!!입니다!!세일!!!입니다!!세일!!!입니다!!</a></td>
+                                        <td><a href="#" class="kakao2__link" onclick="javascript:kakaoPopup2()"> 1,000</a></td>
+                                        <td class="text_green">700</td>
+                                        <td class="text_red">300</td>
+                                        <td class="text_blue">300</td>
+                                        <td>이미지링크</td>
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+                            <input type="button" class="kakao2__btnmore" value="외 55명 모두표시" />
+                        </div>
+
+                    </div>
+
+                    <!-- 전송내역 끝 -->
+                </div>
+            </div>
+
+            <div class="wrap_right">
+                <div id="UPCal">
+                    <div class="wrap_gray">
+                        <!-- Infomation -->
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">TS잔액</dt>
+                                        <dd class="tsmoney boldTitle"><em class="tsIntegerPart">864,251</em><em
+                                                class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt class="boldTitle"></dt>
+                                        <dd class="boldTitle"><input type="submit" name="btnRefreshTS" value="새로고침"
+                                                id="btnRefreshTS" class="btn_refresh" /></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자 단가</dt>
+                                        <dd class="tsmoney">SMS <em class="tsIntegerPart">12</em><em
+                                                class="tsDecimalPart">.0</em>
+                                            TS
+                                            / LMS <em class="tsIntegerPart">29</em><em class="tsDecimalPart">.5</em> TS
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자 단가</dt>
+                                        <dd class="tsmoney"><em class="tsIntegerPart">0</em><em
+                                                class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자</dt>
+                                        <dd class="count"><em id="countBiz">0</em> 건</dd>
+                                        <dt>문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costBiz"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자</dt>
+                                        <dd class="count"><em id="countApp">0</em> 건</dd>
+                                        <dt>앱문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costApp"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">총차감액</dt>
+                                        <dd class="tsmoney"><em id="costTotal"></em> TS</dd>
+                                        <dt class="boldTitle">잔액</dt>
+                                        <dd class="tsmoney"><em id="balanceAfter"></em> TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- TS Account Infomation -->
+                        <div class="wrap_info" style="padding:10px; ">
+                            <div class="boldTitle titleUnderline">TS머니 전용계좌</div>
+                            <div class="blueBoldText">기업은행 431-192047-97-437</div>
+                            <div style="font-size:14px; margin-top:10px; ">예금주 : <span class="buleBoldText">테스트그룹</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="wrap_right2">
+                <div class="wrap_info">
+                    <ul>
+                        <li>
+                            <p>고객센터 <span class="number">1577-4550</span></p>
+                            <p>팩스 <span class="number">032-363-4305</span></p>
+                        </li>
+                        <li>
+                            <p class="copyright">Copyright(C) TOGETHERs co. All Rights Reserved.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+    <script>
+        function kakaoPopup() {
+            var popUrl = "kakao_popup2.html";
+            var popOption = "width=450, height=500, resizable=no, scrollbars=yes, status=no;";
+            window.open(popUrl, "", popOption);
+        };
+        function kakaoPopup2() {
+            var popUrl = "kakao_popup3.html";
+            var popOption = "width=500, height=700, resizable=no, scrollbars=yes, status=no;";
+            window.open(popUrl, "", popOption);
+        };
+    </script>
+</body>
+
+</html>

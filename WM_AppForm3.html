@@ -1,0 +1,266 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css?123123" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <style type="text/css">
+        .btn_refresh {
+            width: 86px;
+            height: 29px;
+            border: none;
+            background: url(./img/img_button2.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .btn_refresh:hover {
+            background: url(./img/img_button2_hover.png) no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post">
+        <div id="UPTabOuter">
+            <div class="tab_menu">
+                <div class="tabouter">
+                    <ul>
+                        <li>
+                            <a class="link_pagetitle" href="./WM_AppForm.html">투게더문자</a>
+                        </li>
+                        <li class="active">
+                            <a class="link_pagetitle" href="#">카카오 친구톡</a>
+                        </li>
+                        <li>
+                            <a id="linkPhone" class="link_pagetitle"
+                                href="javascript:__doPostBack(&#39;linkPhone&#39;,&#39;&#39;)">폰문자</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap_top">
+            <div class="wrap_groupbox">
+                <div class="wrap_left" style="width:700px;">
+                    <div class="tab_submenu">
+                        <div class="tabs">
+                            <ul class="level1">
+                                <li>
+                                    <a class="level1 tab" href="./WM_AppForm2_2.html" style="width:95px">메시지작성</a>
+                                </li>
+                                <li>
+                                    <a class="level1 tab selected" href="./WM_AppForm3.html" style="width:95px">전송대상</a>
+                                </li>
+                                <li>
+                                    <a class="level1 tab" href="./WM_AppForm4.html" style="width:95px">전송내역</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 전송대상 시작 -->
+                    <div class="target_scroll">
+                        <table class="tblList">
+                            <colgroup>
+                                <col style="width:30px;" />
+                                <col style="width:130px;" />
+                                <col style="width:130px;" />
+                                <col style="" />
+                            </colgroup>
+                            <tr>
+                                <th class="text_left">No.</th>
+                                <th class="text_left">휴대전화번호</th>
+                                <th class="text_left">회원명</th>
+                                <th class="text_left">포인트</th>
+                            </tr>
+                            <tr>
+                                <td><label><input type="checkbox" /></label></td>
+                                <td>010xxx5400</td>
+                                <td>김지연</td>
+                                <td>4,118</td>
+                            </tr>
+                            <tr>
+                                <td><label><input type="checkbox" /></label></td>
+                                <td>010xxx5400</td>
+                                <td>김지연</td>
+                                <td>4,118</td>
+                            </tr>
+                            <tr>
+                                <td><label><input type="checkbox" /></label></td>
+                                <td>010xxx5400</td>
+                                <td>김지연</td>
+                                <td>4,118</td>
+                            </tr>
+                            <tr>
+                                <td><label><input type="checkbox" /></label></td>
+                                <td>010xxx5400</td>
+                                <td>김지연</td>
+                                <td>4,118</td>
+                            </tr>
+                        </table>
+                        <input class="btnMore" type="submit" value="외 명 모두표시"/>
+                    </div>
+                    <!-- 전송대상 끝 -->
+                </div>
+                <div class="wrap_center" style="width:295px">
+                    <!-- 미리보기 시작 -->
+                    <div class="preview__phone">
+                        <img class="preview__imgphonetop" src="./img/img_phonetop.gif" alt="카메라이미지" />
+                        <img class="preview__imgphonebottom" src="./img/img_phonebottom.gif" alt="버튼이미지" />
+                        <div class="preview__mssgwrap">
+                            <span class="preview__username">00마트</span>
+                            <div class="preview__mssgbox">
+                                <img class="preview__img" src="./img/thumb_s2.png" />
+                                <p class="preview__txt">
+                                    대박유통 일산점 (삼덕산업)<img class="preview__emoji" src="./img/kakao_emoji/emoji_002.png" />
+                                    041-333-8300 5월 가정의 달맞이 SALE (2019년4월25일~5월7일)
+                                    2019년4월27일(토요일)
+                                    청포도100g-480
+                                    골드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)<img class="kakao2__imgemoji"
+                                        src="./img/kakao_emoji/emoji_005.png" />-5,980드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980
+                                </p>
+                                <a href="#" class="preview__linkbtn">링크1 버튼명 입력</a>
+                                <a href="#" class="preview__linkbtn">링크2 버튼명 입력</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview__sendwrap">
+                        <p class="preview__sendtxt">총 발송대상 : <b class="text_blue">500</b>명</p>
+                        <button class="preview__sendbtn">전 송</button>
+                    </div>
+                    <!-- 미리보기 끝 -->
+                </div>
+
+
+
+            </div>
+
+            <div class="wrap_right">
+                <div id="UPCal">
+                    <div class="wrap_gray">
+                        <!-- Infomation -->
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">TS잔액</dt>
+                                        <dd class="tsmoney boldTitle"><em class="tsIntegerPart">864,251</em><em
+                                                class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt class="boldTitle"></dt>
+                                        <dd class="boldTitle"><input type="submit" name="btnRefreshTS" value="새로고침"
+                                                id="btnRefreshTS" class="btn_refresh" /></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자 단가</dt>
+                                        <dd class="tsmoney">SMS <em class="tsIntegerPart">12</em><em
+                                                class="tsDecimalPart">.0</em>
+                                            TS
+                                            / LMS <em class="tsIntegerPart">29</em><em class="tsDecimalPart">.5</em> TS
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자 단가</dt>
+                                        <dd class="tsmoney"><em class="tsIntegerPart">0</em><em
+                                                class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자</dt>
+                                        <dd class="count"><em id="countBiz">0</em> 건</dd>
+                                        <dt>문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costBiz"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자</dt>
+                                        <dd class="count"><em id="countApp">0</em> 건</dd>
+                                        <dt>앱문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costApp"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">총차감액</dt>
+                                        <dd class="tsmoney"><em id="costTotal"></em> TS</dd>
+                                        <dt class="boldTitle">잔액</dt>
+                                        <dd class="tsmoney"><em id="balanceAfter"></em> TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- TS Account Infomation -->
+                        <div class="wrap_info" style="padding:10px; ">
+                            <div class="boldTitle titleUnderline">TS머니 전용계좌</div>
+                            <div class="blueBoldText">기업은행 431-192047-97-437</div>
+                            <div style="font-size:14px; margin-top:10px; ">예금주 : <span class="buleBoldText">테스트그룹</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="wrap_right2">
+                <div class="wrap_info">
+                    <ul>
+                        <li>
+                            <p>고객센터 <span class="number">1577-4550</span></p>
+                            <p>팩스 <span class="number">032-363-4305</span></p>
+                        </li>
+                        <li>
+                            <p class="copyright">Copyright(C) TOGETHERs co. All Rights Reserved.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+    <script>
+        function clickEvent1() {
+            $(".divSpecialList").toggle();
+        };
+        function clickEvent2() {
+            $(".kakao2__emojibox").toggle();
+        };
+
+        function radioCheck1() {
+            $(".js_radioCheck1")
+        }
+        function tabEvent() {
+
+        }
+
+    </script>
+</body>
+
+</html>

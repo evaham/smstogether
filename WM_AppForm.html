@@ -1,0 +1,968 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css?123123" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="js/clCalendar.js"></script>
+    <script type="text/javascript" src="js/iframeResizer.min.js"></script>
+    <script type="text/javascript" src="js/PopSpecialChar.js?2018012301"></script>
+    <script type="text/javascript" src="js/togethers.js"></script>
+    <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+    <script type="text/javascript" src="js/jquery.color.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+
+    <style type="text/css">
+        #menuTab a.static {
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+        }
+
+        .tabcontents {
+            padding: 0;
+            margin: 0;
+            width: 670px;
+            height: 700px;
+            overflow: hidden;
+            overflow-y: scroll;
+            display: inline-block;
+            *display: inline;
+        }
+
+        .divPadding {
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+
+        /*#divIncludeImg { display: none; }*/
+        /*#divReserve { display: none; }*/
+        .hidden {
+            display: none !important;
+            visibility: hidden !important;
+        }
+
+        .targetApp {
+            background-color: #EFDF62;
+        }
+
+        ul.merge {
+            width: 100%;
+        }
+
+        ul.merge>li {
+            display: inline-block;
+            *display: inline;
+            border-left: 1px solid #CCC;
+            min-width: 70px;
+            text-align: center;
+        }
+
+        ul.merge>li:first-child {
+            border-left: 0px;
+        }
+
+        .btn_refresh {
+            width: 86px;
+            height: 29px;
+            border: none;
+            background: url(./img/img_button2.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .btn_refresh:hover {
+            background: url(./img/img_button2_hover.png) no-repeat;
+        }
+    </style>
+    <style type="text/css">
+        /* <![CDATA[ */
+        #menuTab img.icon {
+            border-style: none;
+            vertical-align: middle;
+        }
+
+        #menuTab img.separator {
+            border-style: none;
+            display: block;
+        }
+
+        #menuTab img.horizontal-separator {
+            border-style: none;
+            vertical-align: middle;
+        }
+
+        #menuTab ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: auto;
+        }
+
+        #menuTab ul.dynamic {
+            z-index: 1;
+        }
+
+        #menuTab a {
+            text-decoration: none;
+            white-space: nowrap;
+            display: block;
+        }
+
+        #menuTab a.static {
+            text-decoration: none;
+            border-style: none;
+            padding-left: 0.15em;
+            padding-right: 0.15em;
+        }
+
+        #menuTab a.popout {
+            background-image: url("/WebResource.axd?d=-ze8-0piMQTDF9uDqXR-jzrW3i75v2rA72IstXu88ol-4rN2EFXCp1rq5TNDeizZvZWdEFK6D0-2qS-mk2z9XC7idfMz3-uFC88YqXs6Ylc1&t=636065509469690049");
+            background-repeat: no-repeat;
+            background-position: right center;
+            padding-right: 14px;
+        }
+
+        #menuTab a.static.selected {
+            text-decoration: none;
+            border-style: none;
+        }
+
+        /* ]]> */
+    </style>
+</head>
+<body>
+    <form method="post" action="./WM_AppForm.aspx" id="form1">
+        <!--// ImgUpload -->
+        <div class="divImgWrap">
+            <div class="bg_blackmask"></div>
+            <div class="showImgBox">
+                <div>
+                    <ul class="list_thumbnail">
+                        <li>
+                            <div class="box_thumbnail">
+                                <div id="imageArea1" class="thumb_update">
+                                    <div class="check-img hidden" id="check_imageArea1">
+                                        이미지 확인 중입니다.<br>잠시만 기다려주세요.
+                                    </div>
+                                    <img id="prev_imageArea1" width="140px" height="140px" src="img/no_image.png" alt="no-image">
+                                </div>
+                            </div>
+                            <div class="text_center">
+                                <div id="imageArea1-btn-area1" style="width:160px;">
+                                    <label for="file1" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-plus"></i>
+                                        등록</label>
+                                </div>
+                                <div id="imageArea1-btn-area2" style="display: none;">
+                                    <label for="file1" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-wrench"></i>
+                                        변경</label>
+                                    <a class="btn btn-sm btn_style2" onclick="lfltDelete('file1','imageArea1', 1);return false;"
+                                        role="button"><i class="glyphicon glyphicon-remove txt_red"></i> 삭제</a>
+                                </div>
+                            </div>
+                            <input type="hidden" id="lflt1Url" name="lflt1Url" class="forUrl" value="">
+                            <input type="hidden" id="lflt1Origin" name="lflt1Origin" value="">
+                            <input type="hidden" id="crop1" name="lflt1Crop" value="false">
+                            <input type="hidden" id="cropdata1" name="lflt1CropData" value="">
+                        </li>
+                        <li>
+                            <div class="box_thumbnail">
+                                <div id="imageArea2" class="thumb_update">
+                                    <div class="check-img hidden" id="check_imageArea2">
+                                        이미지 확인 중입니다.<br>잠시만 기다려주세요.
+                                    </div>
+                                    <img id="prev_imageArea2" width="140px" height="140px" src="img/no_image.png" alt="no-image">
+                                </div>
+                            </div>
+                            <div class="text_center">
+                                <div id="imageArea2-btn-area1" style="width:160px;">
+                                    <label for="file2" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-plus"></i>
+                                        등록</label>
+                                </div>
+                                <div id="imageArea2-btn-area2" style="display: none;">
+                                    <label for="file2" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-wrench"></i>
+                                        변경</label>
+                                    <a class="btn btn-sm btn_style2" onclick="lfltDelete('file2','imageArea2', 2);return false;"
+                                        role="button"><i class="glyphicon glyphicon-remove txt_red"></i> 삭제</a>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="lflt2Url" name="lflt2Url" class="forUrl" value="">
+                            <input type="hidden" id="lflt2Origin" name="lflt2Origin" value="">
+                            <input type="hidden" id="crop2" name="lflt2Crop" value="false">
+                            <input type="hidden" id="cropdata2" name="lflt2CropData" value="">
+                        </li>
+
+                        <li>
+                            <div class="box_thumbnail">
+                                <div id="imageArea3" class="thumb_update">
+                                    <div class="check-img hidden" id="check_imageArea3">
+                                        이미지 확인 중입니다.<br>잠시만 기다려주세요.
+                                    </div>
+                                    <img id="prev_imageArea3" width="140px" height="140px" src="img/no_image.png" alt="no-image">
+                                </div>
+                            </div>
+                            <div class="text_center">
+                                <div id="imageArea3-btn-area1" style="width:160px;">
+                                    <label for="file3" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-plus"></i>
+                                        등록</label>
+                                </div>
+                                <div id="imageArea3-btn-area2" style="display: none;">
+                                    <label for="file3" class="btn btn-sm btn_style2"><span class="glyphicon glyphicon-wrench"></span>
+                                        변경</label>
+                                    <a class="btn btn-sm btn_style2" onclick="lfltDelete('file3','imageArea3', 3);return false;"
+                                        role="button"><i class="glyphicon glyphicon-remove txt_red"></i> 삭제</a>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="lflt3Url" name="lflt3Url" class="forUrl" value="">
+                            <input type="hidden" id="lflt3Origin" name="lflt3Origin" value="">
+                            <input type="hidden" id="crop3" name="lflt3Crop" value="false">
+                            <input type="hidden" id="cropdata3" name="lflt3CropData" value="">
+                        </li>
+
+                        <li>
+                            <div class="box_thumbnail">
+                                <div id="imageArea4" class="thumb_update">
+                                    <div class="check-img hidden" id="check_imageArea4">
+                                        이미지 확인 중입니다.<br>잠시만 기다려주세요.
+                                    </div>
+                                    <img id="prev_imageArea4" width="140px" height="140px" src="img/no_image.png" alt="no-image">
+                                </div>
+                            </div>
+                            <div class="text_center">
+                                <div id="imageArea4-btn-area1" style="width:160px;">
+                                    <label for="file4" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-plus"></i>
+                                        등록</label>
+                                </div>
+                                <div id="imageArea4-btn-area2" style="display: none;">
+                                    <label for="file4" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-wrench"></i>
+                                        변경</label>
+                                    <a class="btn btn-sm btn_style2" onclick="lfltDelete('file4','imageArea4', 4);return false;"
+                                        role="button"><i class="glyphicon glyphicon-remove txt_red"></i> 삭제</a>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="lflt4Url" name="lflt4Url" class="forUrl" value="">
+                            <input type="hidden" id="lflt4Origin" name="lflt4Origin" value="">
+                            <input type="hidden" id="crop4" name="lflt4Crop" value="false">
+                            <input type="hidden" id="cropdata4" name="lflt4CropData" value="">
+                        </li>
+
+                        <li>
+                            <div class="box_thumbnail">
+                                <div id="imageArea5" class="thumb_update">
+                                    <div class="check-img hidden" id="check_imageArea5">
+                                        이미지 확인 중입니다.<br>잠시만 기다려주세요.
+                                    </div>
+                                    <img id="prev_imageArea5" width="140px" height="140px" src="img/no_image.png" alt="no-image" />
+                                </div>
+                            </div>
+                            <div class="text_center">
+                                <div id="imageArea5-btn-area1" style="width:160px;">
+                                    <label for="file5" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-plus"></i>
+                                        등록</label>
+                                </div>
+                                <div id="imageArea5-btn-area2" style="display: none;">
+                                    <label for="file5" class="btn btn-sm btn_style2"><i class="glyphicon glyphicon-wrench"></i>
+                                        변경</label>
+                                    <a class="btn btn-sm btn_style2" onclick="lfltDelete('file5','imageArea5', 5);return false;"
+                                        role="button"><i class="glyphicon glyphicon-remove txt_red"></i> 삭제</a>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="lflt5Url" name="lflt5Url" class="forUrl" value="">
+                            <input type="hidden" id="lflt5Origin" name="lflt5Origin" value="">
+                            <input type="hidden" id="crop5" name="lflt5Crop" value="false">
+                            <input type="hidden" id="cropdata5" name="lflt5CropData" value="">
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="special_buttons">
+                    <input type="button" value="확인" onclick="CommonController.fnShowUpload(true);" />
+                    <input type="button" value="초기화" onclick="CommonController.fnCancelUpload();" />
+                </div>
+            </div>
+        </div>
+
+
+        <!--// ImgCrop -->
+        <div class="divCropWrap">
+            <div class="showCropBox" id="crop_section"></div>
+        </div>
+
+
+
+        <!--// LargeEdit -->
+        <div class="divEditorWrap">
+            <div class="bg_blackmask"></div>
+            <div class="divContentLarge">
+                <div class="divLength">
+                    <img class="ico_antenna" src="img/ico_antenna.png" alt="antena" />
+                    <img class="ico_battery" src="img/ico_battery.png" alt="battery" />
+                    <span id="spnTypeLarge">SMS</span>
+                    <em id="textLengthLarge" class="blueBoldText">0</em>/<em id="textLimitLarge">90</em> bytes
+                </div>
+
+                <textarea name="txtContentLarge" rows="2" cols="20" id="txtContentLarge" class="txtContentLarge bgBlue"
+                    onkeyup="CommonController.fnLengthUpdate(true); CommonController.fnSetChanged(true);">
+                                    </textarea>
+
+                <div class="special_buttons text_center">
+                    <input type="button" value="확인" onclick="CommonController.fnShowEditLarge(false);" />
+                    <input type="button" value="닫기" onclick="CommonController.fnCloseEditLarge();" />
+                </div>
+            </div>
+        </div>
+
+        <!--//Loading -->
+        <div id="UPTabOuter">
+            <div class="tab_menu">
+                <div class="tabouter">
+                    <ul>
+                        <li class="active">
+                            <a class="link_pagetitle">투게더문자</a>
+                        </li>
+                        <li class="">
+                            <a class="link_pagetitle" href="./WM_AppForm2_2.html">카카오 친구톡</a>
+                        </li>
+                        <li class="">
+                            <a id="linkPhone" class="link_pagetitle" href="javascript:__doPostBack(&#39;linkPhone&#39;,&#39;&#39;)">폰문자</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <!--// wrap_top -->
+        <div class="wrap_top">
+
+            <!--// Msg-->
+            <div id="divMsg" class="divMsgWrap">
+                <div class="bg_blackmask"></div>
+                <span id="lbMsg"></span>
+            </div>
+            <div class="wrap_groupbox">
+                <div class="wrap_left">
+                    <div class="wrap_gray">
+                        <div>
+                            <input name="txtTitle" type="text" value="(광고)투게더" maxlength="27" id="txtTitle"
+                                title="장문(LMS) 제목을 입력하세요.(40bytes)" class="tf_lmstitle water" />
+                        </div>
+                
+                        <div class="divContent">
+                            <div class="divLength">
+                                <img class="ico_antenna" src="img/ico_antenna.png" alt="" />
+                                <img class="ico_battery" src="img/ico_battery.png" alt="" />
+                                <span id="spnType">SMS</span>
+                                <em id="textLength" class="blueBoldText">0</em>/<em id="textLimit">90</em> bytes
+                            </div>
+                
+                            <textarea name="txtContent" rows="2" cols="20" id="txtContent" class="tf_message txtContent bgBlue"
+                                onkeyup="CommonController.fnLengthUpdate(false); CommonController.fnSetChanged(true);">
+                                            </textarea>
+                
+                            <div class="special_buttons">
+                                <input type="button" value="특수문자" onclick="CommonController.fnShowSpecialChar();" />
+                                <input type="button" value="장문편집" onclick="CommonController.fnShowEditLarge(true);" />
+                                <input type="button" value="머지키워드" onclick="CommonController.fnShowMergeList();" />
+                            </div>
+                        </div>
+                
+                        <div class="divSpecialWrap">
+                            <div id="divSpecialList" class="divSpecialList">
+                                <ul>
+                                    <li><span onclick="CommonController.fnInsertString('★');">★</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☆');">☆</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☎');">☎</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☏');">☏</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☜');">☜</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☞');">☞</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('※');">※</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♥');">♥</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♡');">♡</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♣');">♣</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♠');">♠</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♤');">♤</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♧');">♧</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♨');">♨</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('ㆀ');">ㆀ</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♩');">♩</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♪');">♪</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♬');">♬</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('■');">■</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('□');">□</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▣');">▣</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▤');">▤</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▦');">▦</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▨');">▨</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▩');">▩</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▒');">▒</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▲');">▲</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('△');">△</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▶');">▶</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▷');">▷</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▼');">▼</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▽');">▽</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◀');">◀</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◁');">◁</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◆');">◆</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◇');">◇</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◈');">◈</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('●');">●</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('○');">○</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◎');">◎</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('⊙');">⊙</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◐');">◐</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◑');">◑</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('←');">←</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('↑');">↑</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('→');">→</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('↓');">↓</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('⇒');">⇒</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('§');">§</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('Ø');">Ø</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∀');">∀</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∃');">∃</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∏');">∏</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∞');">∞</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∧');">∧</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∪');">∪</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∬');">∬</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∴');">∴</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∽');">∽</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('≠');">≠</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('⊃');">⊃</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('￠');">￠</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('￥');">￥</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                
+                        <div class="divMergeWrap">
+                            <div id="mergelist" class="divMergeList">
+                
+                            </div>
+                        </div>
+                        <div class="linkbox">
+                            <p class="linkbox__nodata">연결된 링크가 없습니다.</p>
+                            <div class="linkbox__addlink" style="display: none">
+                                <p class="linkbox__txt">링크 제목 들어가는 부분 가나다라마바사</p>
+                                <span class="linkbox__close" onclick="javascript:btnAction2()"></span>
+                            </div>
+                        </div>
+                
+                        <div class="divOptionWrap">
+                            <table class="tbl_formstyle">
+                                <colgroup>
+                                    <col style="width:85px;" />
+                                    <col style="width:120px;" />
+                                    <col style="width:45px" />
+                                </colgroup>
+                                <tr>
+                                    <td style="width:90px;">발신번호</td>
+                                    <td><input name="txtCallback" type="text" value="15774550" id="txtCallback" class="tf_phone" /></td>
+                                    <td><input type="button" value="선택" class="btn_phone"
+                                            onclick="CommonController.fnPopSelCallback('CommonController.fnSelectedCallback');" />
+                                    </td>
+                                </tr>
+                                <tr class="trRow">
+                                    <td>080수신거부</td>
+                                    <td><input name="txt080Number" type="text" value="0801576144" id="txt080Number" class="tf_phone" />
+                                    </td>
+                                    <td><input type="submit" name="btn080Number" value="호출" id="btn080Number"
+                                            title="매장에 연결된 080수신거부 번호를 불러올 수 있습니다." class="btn_phone" />
+                                        <input type="hidden" name="hd080Msg" id="hd080Msg" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="divOptionWrap">
+                            <table class="tbl_formstyle">
+                                <tr>
+                                    <td>
+                                        <hr class="line_style" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><span class="label_checkbox"><input id="chkReserve" type="checkbox" name="chkReserve"
+                                                    onclick="CommonController.fnToggleReserve(this);" /><label
+                                                    for="chkReserve">예약</label></span></div>
+                
+                                        <div id="divReserve">
+                
+                                            <div class="divPadding">
+                                                <input name="txtDateReserve" type="text" value="2019-03-01" id="txtDateReserve"
+                                                    class="tf_date" />
+                                                <input type="button" onclick="Calendar(this, txtDateReserve);" class="btn_date"
+                                                    value="▼" />
+                                            </div>
+                
+                                            <div class="divPadding">
+                                                <select name="ddlReserveHour" id="ddlReserveHour" class="tf_hours">
+                                                    <option value="0">오전 0시</option>
+                                                    <option value="1">오전 1시</option>
+                                                    <option value="2">오전 2시</option>
+                                                    <option value="3">오전 3시</option>
+                                                    <option value="4">오전 4시</option>
+                                                    <option value="5">오전 5시</option>
+                                                    <option value="6">오전 6시</option>
+                                                    <option value="7">오전 7시</option>
+                                                    <option value="8">오전 8시</option>
+                                                    <option selected="selected" value="9">오전 9시</option>
+                                                    <option value="10">오전 10시</option>
+                                                    <option value="11">오전 11시</option>
+                                                    <option value="12">오후 0시</option>
+                                                    <option value="13">오후 1시</option>
+                                                    <option value="14">오후 2시</option>
+                                                    <option value="15">오후 3시</option>
+                                                    <option value="16">오후 4시</option>
+                                                    <option value="17">오후 5시</option>
+                                                    <option value="18">오후 6시</option>
+                                                    <option value="19">오후 7시</option>
+                                                    <option value="20">오후 8시</option>
+                                                    <option value="21">오후 9시</option>
+                                                    <option value="22">오후 10시</option>
+                                                    <option value="23">오후 11시</option>
+                
+                                                </select>
+                                                <select name="ddlReserveMin" id="ddlReserveMin" class="tf_minute">
+                                                    <option value="0">0 분</option>
+                                                    <option value="5">5 분</option>
+                                                    <option value="10">10 분</option>
+                                                    <option value="15">15 분</option>
+                                                    <option value="20">20 분</option>
+                                                    <option value="25">25 분</option>
+                                                    <option value="30">30 분</option>
+                                                    <option value="35">35 분</option>
+                                                    <option value="40">40 분</option>
+                                                    <option value="45">45 분</option>
+                                                    <option value="50">50 분</option>
+                                                    <option value="55">55 분</option>
+                
+                                                </select>
+                                            </div>
+                
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="label_checkbox"><input id="chk5Duty" type="checkbox" name="chk5Duty"
+                                                checked="checked" onclick="CommonController.fnSet5Duty(false);" /><label
+                                                for="chk5Duty">5대
+                                                표기의무 표시</label></span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <hr class="line_style" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><span class="label_checkbox"><input id="chkMultiSend" type="checkbox" name="chkMultiSend"
+                                                    onclick="CommonController.fnCalculate(); CommonController.fnToggleMultiSend(this);" /><label
+                                                    for="chkMultiSend">문자 + 앱문자 복합발송</label></span></div>
+                                        <div id="divIncludeImg" class="divPadding">
+                
+                                            <input type="button" value="앱문자 이미지 삽입" class="btnIncludeImg"
+                                                onclick="CommonController.fnShowUpload(false);" />
+                
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="label_checkbox"><input id="chkAllUser" type="checkbox" name="chkAllUser" /><label
+                                                for="chkAllUser">센터회원포함(모바일신호
+                                                3일이내)</label></span></td>
+                                </tr>
+                            </table>
+                
+                            <div style="display:none; ">
+                                <input type="submit" name="btnSend" value="문자 전송" id="btnSend" class="btnSend" />
+                                <!-- OnClientClick="return CommonController.fnCheck080();" -->
+                            </div>
+                            <input name="btnCheck080" type="button" id="btnCheck080" class="btnSend" value="문자전송"
+                                onclick="CommonController.fnCheck080();" />
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap_center">
+                    <div id="UPTab">
+                        <div class="tab_submenu">
+                            <div class="tabs" id="menuTab">
+                                <ul class="level1">
+                                    <li><a class="level1 tab" href="#" onclick="__doPostBack(&#39;menuTab&#39;,&#39;0&#39;)">문자전송</a></li>
+                                    <li><a class="level1 tab" href="#" onclick="__doPostBack(&#39;menuTab&#39;,&#39;1&#39;)">보관함</a></li>
+                                    <li><a class="level1 tab" href="#" onclick="__doPostBack(&#39;menuTab&#39;,&#39;2&#39;)">엿보기</a></li>
+                                    <li><a class="level1 tab" href="#" onclick="__doPostBack(&#39;menuTab&#39;,&#39;3&#39;)">전송내역</a></li>
+                                    <li><a class="level1 tab selected" href="#">링크관리</a></li>
+                                    <li><a class="level1 tab" href="#" onclick="__doPostBack(&#39;menuTab&#39;,&#39;5&#39;)">충전안내</a></li>
+                                </ul>
+                            </div><a id="menuTab_SkipLink"></a>
+                        </div>
+                        <div class="tabcontents">
+                            <!-- 링크관리 페이지 -->
+                            <div class="linkadmin">
+                                <div class="linkadmin__infobox">
+                                    <p class="linkadmin__tit">링크문자</p>
+                                    <p class="linkadmin__subtit"><b>고객에게 보내고 싶은 내용이 많다면? 링크문자를 활용해보세요</b></p>
+                                    <ol class="linkadmin__infolist">
+                                        <li>'링크만들기'에서 장문의 내용, 전달이미지를 첨부하여 링크페이지를 생성하세요.</li>
+                                        <li>생성한 링크를 추가하여 문자발송이 가능합니다.</li>
+                                        <li>고객이 받은 문자 메시지에 링크주소가 표시 되며, 링크를 통해 내용을 확인할 수 있습니다. </li>
+                                        <li>일반 문자(SMS,LMS) 보다 길고 다양한 내용, 전단이미지 등을 전달할 수 있습니다.</li>
+                                        <li>웹페이지이므로 문자 전송 후에도 오타, 이미지 수정이 즉시 가능합니다.</li>
+                                        <li>문자에 링크 첨부 시, {링크} 변수가 입력됩니다. 링크 표시 위치를 조정 할 수 있습니다.</li>
+                                        <li>발송된 링크는 15일동안만 접속이 가능하며, 보관함에 생성된 링크는 30일 후 삭제됩니다.</li>
+                                    </ol>
+                                </div>
+                                <div class="linkadmin__searchbox">
+                                    <table class="linkadmin__tbl_layout">
+                                        <colgroup>
+                                            <col style="width:100px;" />
+                                            <col style="width:15px;" />
+                                            <col style="width:100px;" />
+                                            <col style="width:60px;" />
+                                            <col style="width:auto;" />
+                                            <col style="width:80px;" />
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <td><input type="text" class="tf_comm" /></td>
+                                                <td class="text_center">~</td>
+                                                <td><input type="text" class="tf_comm" /></td>
+                                                <td><button class="linkadmin__btn">조회</button></td>
+                                                <td></td>
+                                                <td class="text_right"><button class="linkadmin__btn linkadmin__btn--create" type="button" onclick="javascript:popupOpen1()">링크만들기</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="linkadmin__box">
+                                    <ul class="linkadmin__listbox">
+                                        <li>
+                                            <table class="linkadmin__tbl_layout2">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="linkadmin__thumb">
+                                                            <img src="img/thumb_b.png"/>
+                                                            <a class="linkadmin__close"></a>
+                                                            <div class="linkadmin__linkname_box2">
+                                                                <span class="linkadmin__linkname">링크 제목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는 부분</span>
+                                                            </div>                                                    
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button type="button" class="linkadmin__btn linkadmin__btn--add" onclick="javascript:btnAction1()">문자에 첨부</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><button type="button" class="linkadmin__btn linkadmin__btn--detail" onclick="javascript:popupOpen2()">보기</button></td>
+                                                    <td><button type="button" class="linkadmin__btn linkadmin__btn--detail" onclick="javascript:popupOpen1()">수정</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">생성</span><span class="linkadmin__td">18-02-17 17:19</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">전송</span><span class="linkadmin__td">18-02-17 24:24</span></td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="linkadmin__tbl_layout2">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="linkadmin__thumb">
+                                                            <img src="img/thumb_b.png"/>
+                                                            <a class="linkadmin__close"></a>
+                                                            <div class="linkadmin__linkname_box2">
+                                                                <span class="linkadmin__linkname">링크 제목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는 부분</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button class="linkadmin__btn linkadmin__btn--add">문자에 첨부</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td ><button class="linkadmin__btn linkadmin__btn--detail">보기</button></td>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">수정</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">생성</span><span class="linkadmin__td">18-02-17 17:19</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">전송</span><span class="linkadmin__td">18-02-17 24:24</span></td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="linkadmin__tbl_layout2">
+                                                <colgroup>
+                                                    <col style="width:80px"/>
+                                                    <col style="width:80px"/>
+                                                </colgroup>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="linkadmin__thumb">
+                                                            <img src="img/thumb_s2.png"/>
+                                                            <a class="linkadmin__close"></a>
+                                                            <div class="linkadmin__linkname_box2">
+                                                                <span class="linkadmin__linkname">링크 제목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는 부분</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button class="linkadmin__btn linkadmin__btn--add">문자에 첨부</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">보기</button></td>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">수정</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">생성</span><span class="linkadmin__td">18-02-17 17:19</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">전송</span><span class="linkadmin__td">18-02-17 24:24</span></td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="linkadmin__tbl_layout2">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="linkadmin__thumb">
+                                                            <img src="img/thumb_b.png"/>
+                                                            <a class="linkadmin__close"></a>
+                                                            <div class="linkadmin__linkname_box2">
+                                                                <span class="linkadmin__linkname">링크 제목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는 부분</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button class="linkadmin__btn linkadmin__btn--add">문자에 첨부</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">보기</button></td>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">수정</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">생성</span><span class="linkadmin__td">18-02-17 17:19</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">전송</span><span class="linkadmin__td">18-02-17 24:24</span></td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="linkadmin__tbl_layout2">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="linkadmin__thumb">
+                                                            <a class="linkadmin__close"></a>
+                                                            <div class="linkadmin__linkname_box1">
+                                                                <span class="linkadmin__linkname">링크 제목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들어어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는목 들가는목 들어가는목 들어가는목 들어가는목 들어가는 부분</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button class="linkadmin__btn linkadmin__btn--add">문자에 첨부</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">보기</button></td>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">수정</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">생성</span><span class="linkadmin__td">18-02-17 17:19</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">전송</span><span class="linkadmin__td">18-02-17 24:24</span></td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                        <li>
+                                            <table class="linkadmin__tbl_layout2">
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <div class="linkadmin__thumb">
+                                                            <img src="img/thumb_b.png"/>
+                                                            <a class="linkadmin__close"></a>
+                                                            <div class="linkadmin__linkname_box2">
+                                                                <span class="linkadmin__linkname">링크링크링크링크링크링크 제목 들어가는목 들어가는목 들어가는목 들어가는목 들어가는 부분</span>
+                                                            </div>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <button class="linkadmin__btn linkadmin__btn--add">문자에 첨부</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">보기</button></td>
+                                                    <td><button class="linkadmin__btn linkadmin__btn--detail">수정</button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">생성</span><span class="linkadmin__td">18-02-17 17:19</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="linkadmin__date" colspan="2"><span class="linkadmin__th">전송</span><span class="linkadmin__td">18-02-17 24:24</span></td>
+                                                </tr>
+                                            </table>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- 링크관리 페이지 -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap_right">
+                <div id="UPCal">
+                    <div class="wrap_gray">
+                        <!-- Infomation -->
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">TS잔액</dt>
+                                        <dd class="tsmoney boldTitle"><em class="tsIntegerPart">864,251</em><em class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt class="boldTitle"></dt>
+                                        <dd class="boldTitle"><input type="submit" name="btnRefreshTS" value="새로고침" id="btnRefreshTS"
+                                                class="btn_refresh" /></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자 단가</dt>
+                                        <dd class="tsmoney">SMS <em class="tsIntegerPart">12</em><em class="tsDecimalPart">.0</em>
+                                            TS
+                                            / LMS <em class="tsIntegerPart">29</em><em class="tsDecimalPart">.5</em> TS
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자 단가</dt>
+                                        <dd class="tsmoney"><em class="tsIntegerPart">0</em><em class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자</dt>
+                                        <dd class="count"><em id="countBiz">0</em> 건</dd>
+                                        <dt>문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costBiz"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자</dt>
+                                        <dd class="count"><em id="countApp">0</em> 건</dd>
+                                        <dt>앱문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costApp"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">총차감액</dt>
+                                        <dd class="tsmoney"><em id="costTotal"></em> TS</dd>
+                                        <dt class="boldTitle">잔액</dt>
+                                        <dd class="tsmoney"><em id="balanceAfter"></em> TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- TS Account Infomation -->
+                        <div class="wrap_info" style="padding:10px; ">
+                            <div class="boldTitle titleUnderline">TS머니 전용계좌</div>
+                            <div class="blueBoldText">기업은행 431-192047-97-437</div>
+                            <div style="font-size:14px; margin-top:10px; ">예금주 : <span class="buleBoldText">테스트그룹</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="wrap_right2">
+                <div class="wrap_info">
+                    <ul>
+                        <li>
+                            <p>고객센터 <span class="number">1577-4550</span></p>
+                            <p>팩스 <span class="number">032-363-4305</span></p>
+                        </li>
+                        <li>
+                            <p class="copyright">Copyright(C) TOGETHERs co. All Rights Reserved.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </form>
+    <script>
+        function popupOpen1(){
+            var popUrl = "linkadmin_popup1.html";
+            var popOption = "width=400, height=700, resizable=no, scrollbars=no, status=no;"; 
+                window.open(popUrl,"",popOption);
+        };
+        function popupOpen2(){
+            var popUrl = "linkadmin_popup2.html";
+            var popOption = "width=400, height=700, resizable=no, scrollbars=yes, status=no;"; 
+                window.open(popUrl,"",popOption);
+        };
+        function btnAction1 (){
+            $(".linkbox__nodata").css("display","none");
+            $(".linkbox__addlink").css("display","block");
+        };
+        function btnAction2 (){
+            $(".linkbox__nodata").css("display","block");
+            $(".linkbox__addlink").css("display","none");
+        };
+    </script>
+</body>
+
+</html>

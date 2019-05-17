@@ -1,0 +1,648 @@
+/* 새 웹 응용 프로그램 프로젝트의 기본 CSS 스타일시트입니다. */
+P
+{
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+BODY
+{
+    BACKGROUND-COLOR: white;
+	font-family: Tahoma;
+    WORD-SPACING: normal;
+	SCROLLBAR-FACE-COLOR: #cfcfcf;
+    SCROLLBAR-SHADOW-COLOR: #595959;
+    SCROLLBAR-3DLIGHT-COLOR: #595959;
+    SCROLLBAR-ARROW-COLOR: #ffffff;
+    SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+    SCROLLBAR-BASE-COLOR: #cfcfcf;
+
+}
+
+
+.text
+{
+	font-family: Tahoma;
+	font-size: 9pt;
+}
+TD
+{
+	font-family: Tahoma;
+	font-size: 9pt;
+}
+TABLE
+{
+	font-family: Tahoma;
+	font-size: 9pt;
+}
+SPAN
+{
+	font-family: Tahoma;
+	color: #000000;
+	font-size: 9pt;
+}	
+H1, H2, H3, H4, H5, TH, THEAD, TFOOT
+{
+    COLOR: #003366;
+}
+H1	{	
+	font-family: Tahoma;
+	font-size:	2em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H2	{	
+	font-family: Tahoma;
+	font-size:	1.75em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H3	{	
+	font-family: Tahoma;
+	font-size:	1.58em;
+	font-weight:	500;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H4	{	
+	font-family: Tahoma;
+	font-size:	1.33em;
+	font-weight:	500;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H5, DT	{	
+	font-family: Tahoma;
+	font-size:	1em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	}	
+		
+H6
+{	
+	font-family: Tahoma;
+	font-size:	.8em;
+	font-weight:	700;
+	font-style:	normal;
+	text-decoration:	none;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+}	
+		
+TFOOT, THEAD	
+{	
+	font-size:	1em;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: Tahoma;
+}	
+		
+TH	
+{	
+	vertical-align:	baseline;
+	font-size:	1em;
+	font-weight:	bold;
+	word-spacing:	normal;
+	letter-spacing:	normal;
+	text-transform:	none;
+	font-family: Tahoma;
+}	
+
+
+A:link	
+{	
+	text-decoration:	none;
+	font-family: Tahoma;
+	color:	#000000;
+}	
+		
+A:visited
+{
+	color: #9900ff;
+	font-family: Tahoma;
+	text-decoration: none;
+}	
+		
+A:active	
+{	
+	text-decoration:	none;
+	font-family: Tahoma;
+	color:	#CC0033;
+}	
+		
+A:hover	
+{	
+	text-decoration:	none;
+	font-family: Tahoma;
+	color:	#CC0033;
+}
+	
+SMALL	
+{	
+	font-size:	.7em;
+}	
+
+BIG	
+{	
+	font-size:	1.17em;
+}	
+
+BLOCKQUOTE, PRE	
+{	
+	font-family: Tahoma;
+}	
+
+
+UL LI	
+{	
+	list-style-type:	square ;
+}	
+
+UL LI LI	
+{	
+	list-style-type:	disc;
+}	
+
+UL LI LI LI	
+{	
+	list-style-type:	circle;
+}	
+	
+OL LI	
+{	
+	list-style-type:	decimal;
+}	
+
+OL OL LI
+{	
+	list-style-type:	lower-alpha;
+}	
+
+OL OL OL LI	
+{	
+	list-style-type:	lower-roman;
+}	
+
+IMG 	
+{
+	border: 0px;
+}
+
+
+/*텍스트-회색1*/
+.txtGray1
+{
+	border-color:#8c9c8c;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0000A0;
+	background-color:#fefedc;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:15px;
+	ime-mode:active;
+}
+
+/*텍스트-회색2 (txtGray1 보다 큼)*/
+.txtGray2
+{
+	border-color:#8c9c8c;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0000A0;
+	background-color:#fefedc;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:17px;
+	ime-mode:active;
+}
+
+/*텍스트-회색3(txtGray1과 같으나 글씨 파랑색, 한글입력=No)*/
+.txtGray3
+{
+	border-color:#8c9c8c;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0000FF;
+	background-color:#fefedc;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:15px;
+	ime-mode:disabled;
+}
+
+/*텍스트-회색1(txtGray1과 같으나 글씨 파랑색)*/
+.txtGray4
+{
+	border-color:#8c9c8c;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0000FF;
+	background-color:#fefedc;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:15px;
+	ime-mode:active;
+}
+
+/*텍스트Area-회색1*/
+.txtAreaGray1
+{
+	border-color:#8c9c8c;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0000A0;
+	background-color:#fefedc;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:250px;
+	ime-mode:active;
+    
+    BACKGROUND-POSITION: 0px -1px;
+    BACKGROUND-IMAGE: url('/img/bk_textarea1.gif');
+    LINE-HEIGHT: 165%;
+}
+
+
+/*드롭다운-오렌지1*/
+.ddlOrange1
+{
+	font-size:9pt;
+	font-family: Tahoma;
+	color:#906000;
+	background-color:#ffffcc;
+	border-style:Solid;
+	border-width:1px;
+	border-color:#8c9c8c;
+}
+
+/*드롭다운-파랑1*/
+.ddlBlue1
+{
+	font-size: 9pt;
+	font-family: Tahoma;
+	color:#006699;
+	background-color:#eeeeff;
+	border-style:solid;
+	border-width:1px;
+	border-color:#3333cc;
+}
+
+/*버튼1시리즈는 아이콘등 이미지 사용해도 되는 일반적인 높이*/
+/*버튼-파랑1*/
+.btnBlue1
+{
+	height:21px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#006699;
+	font-family:Tahoma;
+	font-size:9pt;
+	color:#006699;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#AACCFF);
+}
+
+/*버튼-빨강1*/
+.btnRed1
+{
+	height:21px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#990000;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#990000;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#EE9999);
+}
+
+
+/*버튼-녹색1*/
+.btnGreen1
+{
+	height:21px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#006600;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#006600;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#a5df10);
+}
+
+/*버튼-회색1*/
+.btnGray1
+{
+	height:21px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#333333;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#333333;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#BBBBBB);
+}
+
+
+/*버튼2시리즈는 버튼1보다 높이를 줄여 텍스트박스 txtGray1등과 높이를 맞춘 높이*/
+/*버튼-파랑2*/
+.btnBlue2
+{
+	height:19px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#006699;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#006699;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#AACCFF);
+}
+
+/*버튼-빨강2*/
+.btnRed2
+{
+	height:19px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#990000;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#990000;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#EE9999);
+}
+
+
+/*버튼-녹색2*/
+.btnGreen2
+{
+	height:19px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#006600;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#006600;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#a5df10);
+}
+
+/*버튼-회색1*/
+.btnGray2
+{
+	height:19px;
+	border-style:solid;
+	border-width:1px;
+	border-color:#333333;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#333333;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#BBBBBB);
+}
+
+/*텍스트(달력)-파랑1*/
+.txtCalBlue2 
+{
+	border-color:#6699CC;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0055AA;
+	background-color:#fefefe;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:13px;
+	width:70px;
+	ime-mode:disabled;
+}
+
+/*버튼(달력)-파랑1*/
+.btnCalBlue2
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#006699;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#006699;
+	cursor:hand;
+	height:17px;
+	width:17px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#AACCFF);
+}
+
+
+
+/*텍스트(달력)-회색1*/
+.txtCalGray1 
+{
+	border-color:#777777;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #0055AA;
+	background-color:#fefefe;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:15px;
+	width:70px;
+	ime-mode:disabled;
+}
+
+/*버튼(달력)-회색1*/
+.btnCalGray1
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#333333;
+	font-family: Tahoma;
+	font-size:9pt;
+	color:#333333;
+	cursor:hand;
+	height:19px;
+	width:17px;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#BBBBBB);
+}
+
+
+/*HTC달력-그레이1*/
+input.calGray1
+{
+	border-color:#8c9c8c;
+	border-width:1px;
+	border-style:Solid;
+	COLOR: #006699;
+	background-color:#EEEEEE;
+	font-family: Tahoma;
+	font-size:9pt;
+	height:13px;
+	width:70px;
+	behavior:url('/Common/htc_calendar.htc');	 
+}
+
+/*표셀 : 흰색-->회색 그라디언트(가로)*/
+.tdGray1
+{
+	font-family: Tahoma;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr=#FFFFFF, EndColorStr=#CCCCCC);	
+}
+
+/*표셀 : 흰색-->회색 그라디언트(세로)*/
+.tdGray2
+{
+	font-family: Tahoma;
+	cursor:hand;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#CCCCCC);	
+}
+
+.tdGray3
+{
+	font-family: Tahoma;
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#FFFFFF, EndColorStr=#CCCCCC);	
+}
+
+/* 표셀 : 메뉴 */
+.tdMenuNormal
+{
+	background-color:#8c929c;
+	width:70px;
+	height:20px;
+	color:white;
+/*	border:solid 1px white;  */
+	border-right:solid 1px 8c929c;
+	border-left:solid 1px white;
+	border-top:solid 1px white;
+	border-bottom:solid 1px white;
+	cursor:hand;
+	text-align:center;
+}
+.tdMenuHot
+{
+	width:70px;
+	height:20px;
+	background-color:#EB8040;
+/*	border-top:solid #E7A673 3px; */
+	border-left:solid 1px white;
+	border-top:solid 1px white;
+	color:White;
+	font-family:Tahoma;
+	text-align:center;
+	font-weight:bold;
+}
+
+/*표셀 : 타이틀(회색)*/
+.tdListTitle1
+{
+	height:20px;
+	background-color:#6688AA;
+	border-top:solid #6688AA 0px;
+	color:White;
+	font-family: Tahoma;
+	text-align:center;
+}
+
+/*표셀 : 등록정보등 테이블 타이틀  80E12A, a5df10*/
+.tdTableTitle1
+{
+	height:20px;
+	background-color:#EB8040;
+	border-top:solid #E7A673 3px;
+	color:White;
+	font-family: Tahoma;
+	text-align:center;
+}
+
+.tdTableTitle2
+{
+	height:20px;
+	background-color:#eeeeff;
+	color:006699;
+	font-family: Tahoma;
+	text-align:center;
+}
+
+/*표셀 : 리스트페이지용 타이틀 */
+.tdPageTitle1
+{
+	height:20px;
+	vertical-align :middle;
+	font-family: Tahoma;
+	font-size : 11pt;
+	font-weight :900;
+	color:#006699;
+	border-bottom:solid #006699 2px;
+}
+.tdPageTitle2
+{
+	height:20px;
+	vertical-align :middle;
+	font-family: Tahoma;
+	font-size : 11pt;
+	color:#8c929c;
+	border:solid #8c929c 1px;
+	border-bottom:solid #8c929c 2px;
+}
+
+/*표셀 : 검색(회색 검색항목)*/
+.tdPageSearch1
+{
+	height:22px;
+	vertical-align :middle;
+	font-family: Tahoma;
+	font-size : 9pt;
+	font-weight :normal;
+	color:#8c9c8c;
+	border:solid 1px #AAAA99;
+	background-color:#EEEECC;
+}
+
+/*표셀 : 표상단 경계라인용*/
+.tdTableTop1
+{
+	height:3px;
+	background-color:#EB8040;
+	border:solid #EB8040 0px;
+}
+
+
+/*표셀 : 표하단 경계라인용*/
+.tdTableBottom1
+{
+	height:3px;
+	background-color:#EB8040;
+	border:solid #EB8040 0px;
+}
+
+/*표셀 : 표타이틀(연두)*/
+.tdLineGreen1
+{
+	height:3px;
+	background-color:#a5df10;
+	border-bottom:solid #a5df10 0px;
+}

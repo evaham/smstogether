@@ -1,0 +1,148 @@
+﻿
+.txtMsgStd
+{
+	border-width:0px;
+    COLOR:#000090;
+    font-family: 굴림체;
+    font-size:9pt;
+    width:113px;
+    height:150px;
+    ime-mode:active;
+    background-color:#f0f0f0;
+    LINE-HEIGHT: 140%;
+    padding-left:22px;
+    padding-right:22px;
+    scrollbar-shadow-color: #ffffff; scrollbar-highlight-color: #ffffff; scrollbar-face-color: #d9d9d9; scrollbar-3dlight-color: #d9d9d9; scrollbar-darkshadow-color: #d9d9d9; scrollbar-track-color: #ffffff; scrollbar-arrow-color: #ffffff;
+}
+
+.txtMsgStdOld
+{
+    border-width:0px;
+    COLOR: #0000A0;
+    font-family:굴림체;
+    font-size:9pt;
+    width:117px;
+    height:120px;
+    ime-mode:active;
+    background-color:#ededee;
+    LINE-HEIGHT: 130%;
+    padding-right:0px;
+    word-break:break-all;
+}
+
+.txtPhoneCallback
+{
+	border-width:0px;
+    border : solid 1px #444444;
+    COLOR: #6699ff;
+    background-color:#000000;
+    font-family: Tahoma;
+    font-size:9pt;
+    width:100px;
+    height:12px;
+    ime-mode:disabled;
+}
+
+.txtPhoneCallbackOld
+{
+    border-width:0px;
+    COLOR: #0000A0;
+    background-color:#ededee;
+    font-family: Tahoma;
+    font-size:9pt;
+    width:90px;
+    height:11px;
+    ime-mode:disabled;
+}
+
+.txtMsgTitle
+{
+    border-width:0px;
+    border-bottom: dashed 1px gray;
+    COLOR: #999999;
+    font-family: 굴림체;
+    font-size:9pt;
+    width:100px;
+    ime-mode:disabled;
+    padding-right:0px;
+    overflow: hidden;
+}
+
+.txtMsgView
+{
+    border-width:0px;
+    COLOR: #505850;
+    font-family: 굴림체;
+    font-size:9pt;
+    width:100px;
+    height:100px;
+    ime-mode:disabled;
+    background-color:#F6FCFF;
+    LINE-HEIGHT: 130%;
+    padding-right:0px;
+    cursor:hand;
+    overflow: hidden;
+}
+
+.txtMsgViewName
+{
+    border-width:0px;
+    COLOR: #0000FF;
+    font-family: 굴림체;
+    font-size:9pt;
+    width:95px;
+    ime-mode:disabled;
+    background-color:#FFFFFF;
+    LINE-HEIGHT: 130%;
+    padding-right:0px;
+    overflow: hidden;
+}
+
+.txtMsgTemplNew
+{
+    border-width:0px;
+    COLOR: #000000;
+    font-family:굴림체;
+    font-size:9pt;
+    width:117px;
+    height:100px;
+    ime-mode:active;
+    background-color:#F6FCFF;
+    LINE-HEIGHT: 130%;
+    padding-right:0px;
+    word-break:break-all;
+}
+
+.txtMsgTemplEdit
+{
+    border-width:0px;
+    COLOR: #000000;
+    font-family:굴림체;
+    font-size:9pt;
+    width:100px;
+    height:100px;
+    ime-mode:active;
+    background-color:#F6FCFF;
+    LINE-HEIGHT: 130%;
+    padding-right:0px;
+    word-break:break-all;
+    overflow: hidden;
+}
+
+.txtMsgTemplTitle
+{
+    border-color:#8c9c8c;
+    border-width:1px;
+    border-style:Solid;
+    COLOR: #000000;
+    font-family:굴림체;
+    font-size:9pt;
+    width:100px;
+    height:15px;
+    ime-mode:active;
+    background-color:#FFFFFF;
+    LINE-HEIGHT: 130%;
+    padding-right:0px;
+    word-break:break-all;
+    
+}

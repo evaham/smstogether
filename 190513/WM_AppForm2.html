@@ -1,0 +1,412 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css?123123" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <style type="text/css">
+        .btn_refresh {
+            width: 86px;
+            height: 29px;
+            border: none;
+            background: url(./img/img_button2.png) no-repeat;
+            cursor: pointer;
+        }
+
+        .btn_refresh:hover {
+            background: url(./img/img_button2_hover.png) no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <div id="UPTabOuter">
+            <div class="tab_menu">
+                <div class="tabouter">
+                    <ul>
+                        <li>
+                            <a class="link_pagetitle" href="./WM_AppForm.html">투게더문자</a>
+                        </li>
+                        <li class="active">
+                            <a class="link_pagetitle" href="#">카카오 친구톡</a>
+                        </li>
+                        <li>
+                            <a id="linkPhone" class="link_pagetitle" href="javascript:__doPostBack(&#39;linkPhone&#39;,&#39;&#39;)">폰문자</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrap_top">
+            <div class="kakaowrap">
+                <div class="tab_submenu">
+                    <div class="tabs">
+                        <ul class="level1">
+                            <li>
+                                <a class="level1 tab selected" style="width:95px">메시지작성</a>
+                            </li>
+                            <li>
+                                <a class="level1 tab" style="width:95px">전송대상</a>
+                            </li>
+                            <li>
+                                <a class="level1 tab" style="width:95px">전송내역</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="kakao">
+                    <div class="kakao__leftbox">
+                        <p class="kakao__subtit">내용입력</p>
+                        <div class="kakao__textarea">
+                            <textarea rows="8" cols="10">애박유통</textarea>
+                        </div>
+                        <div class="kakao__functionbox">
+                            <button class="kakao__btn" type="button" onclick="clickEvent1();">특수문자</button>
+                            <button class="kakao__btn" type="button" onclick="clickEvent2();" >카톡이모티콘</button>
+                            <button class="kakao__btn">머지데이터</button>
+                            <button class="kakao__btn">URL링크</button>
+                            <span class="kakao__length">0/1000</span>
+                        </div>
+
+                        <div class="divSpecialWrap">
+                            <div id="divSpecialList" class="divSpecialList">
+                                <ul>
+                                    <li><span onclick="CommonController.fnInsertString('★');">★</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☆');">☆</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☎');">☎</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☏');">☏</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☜');">☜</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('☞');">☞</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('※');">※</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♥');">♥</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♡');">♡</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♣');">♣</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♠');">♠</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♤');">♤</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♧');">♧</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♨');">♨</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('ㆀ');">ㆀ</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♩');">♩</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♪');">♪</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('♬');">♬</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('■');">■</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('□');">□</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▣');">▣</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▤');">▤</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▦');">▦</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▨');">▨</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▩');">▩</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▒');">▒</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▲');">▲</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('△');">△</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▶');">▶</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▷');">▷</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▼');">▼</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('▽');">▽</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◀');">◀</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◁');">◁</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◆');">◆</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◇');">◇</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◈');">◈</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('●');">●</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('○');">○</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◎');">◎</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('⊙');">⊙</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◐');">◐</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('◑');">◑</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('←');">←</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('↑');">↑</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('→');">→</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('↓');">↓</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('⇒');">⇒</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('§');">§</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('Ø');">Ø</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∀');">∀</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∃');">∃</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∏');">∏</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∞');">∞</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∧');">∧</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∪');">∪</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∬');">∬</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∴');">∴</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('∽');">∽</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('≠');">≠</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('⊃');">⊃</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('￠');">￠</span></li>
+                                    <li><span onclick="CommonController.fnInsertString('￥');">￥</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        
+                        <div class="kakao__emojiwarp">
+                            <div class="kakao__emojibox">
+                                <ul>
+                                    <li><button class="kakao__emojibtn" title="하트뿅"><img src="./img/kakao_emoji/emoji_001.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="하하"><img src="./img/kakao_emoji/emoji_002.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="우와"><img src="./img/kakao_emoji/emoji_003.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="심각"><img src="./img/kakao_emoji/emoji_004.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="힘듬"><img src="./img/kakao_emoji/emoji_005.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="흑흑"><img src="./img/kakao_emoji/emoji_006.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="아잉"><img src="./img/kakao_emoji/emoji_007.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="헉"><img src="./img/kakao_emoji/emoji_016.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="열받아"><img src="./img/kakao_emoji/emoji_017.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="흥"><img src="./img/kakao_emoji/emoji_018.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="감동"><img src="./img/kakao_emoji/emoji_019.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="뽀뽀"><img src="./img/kakao_emoji/emoji_020.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="멘붕"><img src="./img/kakao_emoji/emoji_021.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="정색"><img src="./img/kakao_emoji/emoji_022.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="발그레"><img src="./img/kakao_emoji/emoji_031.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="수줍"><img src="./img/kakao_emoji/emoji_032.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="컴온"><img src="./img/kakao_emoji/emoji_033.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="졸려"><img src="./img/kakao_emoji/emoji_034.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="미소"><img src="./img/kakao_emoji/emoji_035.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="윙크"><img src="./img/kakao_emoji/emoji_036.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="방긋"><img src="./img/kakao_emoji/emoji_037.png" width="23" /></button></li>
+
+                                    <li><button class="kakao__emojibtn" title="놀람"><img src="./img/kakao_emoji/emoji_046.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="아픔"><img src="./img/kakao_emoji/emoji_047.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="당황"><img src="./img/kakao_emoji/emoji_048.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="풍선껌"><img src="./img/kakao_emoji/emoji_049.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="버럭"><img src="./img/kakao_emoji/emoji_050.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="궁금"><img src="./img/kakao_emoji/emoji_051.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="궁금"><img src="./img/kakao_emoji/emoji_052.png" width="23" /></button></li>
+
+                                    <li><button class="kakao__emojibtn" title="우웩"><img src="./img/kakao_emoji/emoji_061.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="외계인"><img src="./img/kakao_emoji/emoji_062.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="외계인녀"><img src="./img/kakao_emoji/emoji_063.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="공포"><img src="./img/kakao_emoji/emoji_064.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="근심"><img src="./img/kakao_emoji/emoji_065.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="악마"><img src="./img/kakao_emoji/emoji_066.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="썩소"><img src="./img/kakao_emoji/emoji_067.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="오케이"><img src="./img/kakao_emoji/emoji_076.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="최고"><img src="./img/kakao_emoji/emoji_077.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="최악"><img src="./img/kakao_emoji/emoji_078.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="그만"><img src="./img/kakao_emoji/emoji_079.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="땀"><img src="./img/kakao_emoji/emoji_080.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="알약"><img src="./img/kakao_emoji/emoji_081.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="밥"><img src="./img/kakao_emoji/emoji_082.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="케이크"><img src="./img/kakao_emoji/emoji_091.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="촛불"><img src="./img/kakao_emoji/emoji_092.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="컵케이크a"><img src="./img/kakao_emoji/emoji_093.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="컵케이크b"><img src="./img/kakao_emoji/emoji_094.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="해"><img src="./img/kakao_emoji/emoji_095.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="구름"><img src="./img/kakao_emoji/emoji_096.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="비"><img src="./img/kakao_emoji/emoji_097.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="담배"><img src="./img/kakao_emoji/emoji_106.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="축구"><img src="./img/kakao_emoji/emoji_107.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="야구"><img src="./img/kakao_emoji/emoji_108.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="농구"><img src="./img/kakao_emoji/emoji_109.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="당구"><img src="./img/kakao_emoji/emoji_110.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="골프"><img src="./img/kakao_emoji/emoji_111.png" width="23" /></button></li>
+                                    <li><button class="kakao__emojibtn" title="카톡"><img src="./img/kakao_emoji/emoji_112.png" width="23" /></button></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="kakao__subtit">이미지첨부 <span class="kakao__info">권장사이즈: 800x400px/ 지원파일:jpg,png(최대 10MB)</span></p>
+                        <div class="kakao__box kakao__box--gray">
+                            <button type="button" class="kakao__btn kakao__btn--yellow">파일선택</button>
+                            <button type="button" class="kakao__btn kakao__btn--yellow">이미지허브</button>
+                            <span class="text_blue"><b>이미지첨부 완료</b></span>
+                            <button class="kakao__btn">삭제</button>
+                        </div>
+                        <p class="kakao__subtit">버튼추가<span class="kakao__info">(링크 직접입력 또는 URL링크 추가가능)</span></p>
+                        <div class="kakao__box">
+                            <label class="kakao__radio">
+                                <input type="radio" name="group1" />없음
+                            </label>
+                            <label class="kakao__radio">
+                                <input type="radio" name="group1" />버튼 1개
+                            </label>
+                            <label class="kakao__radio">
+                                <input type="radio" name="group1" />버튼 2개
+                            </label>
+                            <ul class="kakao__urllist">
+                                <li>
+                                    <input class="kakao__tf" type="text" placeholder="버튼명 입력" style="width:150px" />
+                                    <input class="kakao__tf" type="text" placeholder="http://" style="width:340px" />
+                                    <button class="kakao__btn">URL링크</button>
+                                </li>
+                                <li>
+                                    <input class="kakao__tf" type="text" placeholder="버튼명 입력" style="width:150px" />
+                                    <input class="kakao__tf" type="text" placeholder="http://" style="width:340px" />
+                                    <button class="kakao__btn">URL링크</button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <p class="kakao__subtit">실패 건 대체발송 설정</p>
+                        <div class="kakao__box kakao__box--gray">
+                            <p class="kakao__failinfo">친구가 아닌 회원(실패건)에 <span class="text_red">대체발송하지 않습니다</span></p>
+                            <p class="kakao__failinfo">친구가 아닌 회원(실패건)에 <span class="text_red">SMS</span>로 대체발송 합니다</p>
+                            <button class="kakao__failbtn">설정변경</button>
+                        </div>
+                        <p class="kakao__subtit">발송방식</p>
+                        <div class="kakao__box">
+                            <label class="kakao__radio">
+                                <input type="radio" name="group2" />즉시발송
+                            </label>
+                            <label class="kakao__radio">
+                                <input type="radio" name="group2" />예약발송
+                            </label>
+                            <span>
+                                <input type="text" class="kakao__tf" placeholder="2019-04-23" style="width:100px;" />
+                                <select class="kakao__opt">
+                                    <option>오전 9시</option>
+                                </select>
+                                <select class="kakao__opt">
+                                    <option>00분</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="kakao__rightbox">
+                        <div class="kakao__phone">
+                            <img class="kakao__imgphonetop" src="./img/img_phonetop.gif" />
+                            <img class="kakao__imgphonebottom" src="./img/img_phonebottom.gif" />
+                            <div class="kakao__mssgwrap">
+                                <span class="kakao__username">00마트</span>
+                                <div class="kakao__mssgbox">
+                                    <img class="kakao__mssgimg" src="./img/thumb_s2.png" />
+                                    <p class="kakao__mssgtext">
+                                        대박유통 일산점 (삼덕산업)<img class="kakao__imgemoji" src="./img/kakao_emoji/emoji_002.png" width="23" />
+                                        041-333-8300 5월 가정의 달맞이 SALE (2019년4월25일~5월7일)
+                                        2019년4월27일(토요일)
+                                        청포도100g-480 골드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980드키위(1+1)-5,980
+                                    </p>
+                                    <a class="kakao__mssglink">링크1 버튼명 입력</a>
+                                    <a class="kakao__mssglink">링크2 버튼명 입력</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="kakao__sendbox">
+                            <p class="kakao__sendtxt">총 발송대상 : <b class="text_blue">500</b>명</p>
+                            <button class="kakao__sendbtn">전   송</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wrap_right">
+                <div id="UPCal">
+                    <div class="wrap_gray">
+                        <!-- Infomation -->
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">TS잔액</dt>
+                                        <dd class="tsmoney boldTitle"><em class="tsIntegerPart">864,251</em><em class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt class="boldTitle"></dt>
+                                        <dd class="boldTitle"><input type="submit" name="btnRefreshTS" value="새로고침" id="btnRefreshTS" class="btn_refresh" /></dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자 단가</dt>
+                                        <dd class="tsmoney">SMS <em class="tsIntegerPart">12</em><em class="tsDecimalPart">.0</em>
+                                            TS
+                                            / LMS <em class="tsIntegerPart">29</em><em class="tsDecimalPart">.5</em> TS
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자 단가</dt>
+                                        <dd class="tsmoney"><em class="tsIntegerPart">0</em><em class="tsDecimalPart">.0</em>
+                                            TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="wrap_info">
+                            <ul>
+                                <li>
+                                    <dl>
+                                        <dt>문자</dt>
+                                        <dd class="count"><em id="countBiz">0</em> 건</dd>
+                                        <dt>문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costBiz"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>앱문자</dt>
+                                        <dd class="count"><em id="countApp">0</em> 건</dd>
+                                        <dt>앱문자 총액</dt>
+                                        <dd class="tsmoney"><em id="costApp"></em> TS</dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt class="boldTitle">총차감액</dt>
+                                        <dd class="tsmoney"><em id="costTotal"></em> TS</dd>
+                                        <dt class="boldTitle">잔액</dt>
+                                        <dd class="tsmoney"><em id="balanceAfter"></em> TS</dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- TS Account Infomation -->
+                        <div class="wrap_info" style="padding:10px; ">
+                            <div class="boldTitle titleUnderline">TS머니 전용계좌</div>
+                            <div class="blueBoldText">기업은행 431-192047-97-437</div>
+                            <div style="font-size:14px; margin-top:10px; ">예금주 : <span class="buleBoldText">테스트그룹</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="wrap_right2">
+                <div class="wrap_info">
+                    <ul>
+                        <li>
+                            <p>고객센터 <span class="number">1577-4550</span></p>
+                            <p>팩스 <span class="number">032-363-4305</span></p>
+                        </li>
+                        <li>
+                            <p class="copyright">Copyright(C) TOGETHERs co. All Rights Reserved.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+   
+
+
+    <script>
+        function clickEvent1(){
+            $(".divSpecialList").toggle();       
+        };
+        function clickEvent2(){
+            $(".kakao__emojibox").toggle();       
+        };
+
+        function radioCheck1(){
+            $(".js_radioCheck1")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+﻿@media print {
+  .no_print,
+  .no-print * {
+    display: none !important;
+  }
+}
+body {
+  background-color: #f5f5f5;
+}
+.container {
+  max-width: 600px;
+}
+h2 {
+  margin: 1em 0 0.5em;
+}
+.navbar {
+  margin-top: 15px;
+}
+.navbar-default {
+  border-color: #dee6f2;
+  border-left: 5px solid #558ae4;
+  background-color: #eaeff6;
+}
+.navbar-default .navbar-text {
+  margin-left: -10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #184797;
+  letter-spacing: -0.5px;
+}
+label .label {
+  display: inline-block;
+  padding: 0.3em;
+  vertical-align: 20%;
+}
+label .label-danger {
+  background-color: #e7908e;
+}
+.alert-info {
+  border-color: #f1f1f1;
+  color: #666666;
+  background-color: #f8f8f8;
+}
+.sms_checkbox .input-group .input-group-addon,
+.stmart_checkbox .input-group .input-group-addon {
+  height: 60px;
+}
+.sms_checkbox .input-group label,
+.stmart_checkbox .input-group label {
+  height: 60px;
+}
+.sms_checkbox .input-group .ico_img,
+.stmart_checkbox .input-group .ico_img {
+  padding-left: 50px;
+  background: url(/images/reg/ico_togetherS.jpg) 0 0 no-repeat;
+  background-position: 5px;
+}
+.sms_checkbox .input-group .ico_img02,
+.stmart_checkbox .input-group .ico_img02 {
+  padding-left: 50px;
+  background: url(/images/reg/ico_radio.jpg) 0 0 no-repeat;
+  background-position: 5px;
+}
+.sms_checkbox .input-group .txt_center,
+.stmart_checkbox .input-group .txt_center {
+  padding-top: 18px;
+}
+pre {
+  height: 6em;
+  margin: 15px 15px;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif
+}
+.panel-footer {
+  padding-top: 15px;
+  background-color: #ffffff;
+}

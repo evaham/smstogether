@@ -1,0 +1,64 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css?2018122002" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+    <style>
+        body{background: #e9ecef}
+        .mobileview{overflow: hidden; margin: 10px; border-radius: 5px; background: #fff; font-size: 1.2em; box-shadow: 0 2px 5px 1px rgba(0,0,0,.2)}
+        .mobileview--red {background-color: #e60023; }
+        .mobileview__titbox{ padding: 10px 0; font-size:2em; font-weight: bold; color:#fff; text-align: center }
+        .mobileview__textbox { padding: 20px; font-size:1.2em; }
+        .mobileview__imagebox { border-top:1px solid #ddd}
+        img{width:100%}
+    </style>
+</head>
+
+<body>
+    <div class="mobileview mobileview--red">
+        <div class="mobileview__titbox js_fontsize">일이삼사오육칠팔구십</div>
+    </div>
+    <div class="mobileview">
+        <div class="mobileview__textbox">
+            (광고) 대박마트565 062-565-5650<br />
+            ★삼립)단팥호빵540g/6입 → 5,200원★ ★군고구마 1봉지 5,565원★ ★구운계란판매★<br />
+            ★문자행사★ 기간:12월11일 ~ 12월16일(일)까지/<br /><br /><br /><br />
+            ★공산품★ #봉황)특란 30구 → 2,980원 #삼양라면멀티 120g*5+1입 → 2,980원 #베지밀고칼슘두유 190ml*24 → 9,900원<br />
+            #봉황)특란 30구 → 2,980원<br />
+        </div>
+    </div>
+    <div class="mobileview">
+        <div class="mobileview__imagebox">
+            <img src="img/thumb_s2.png" />
+            <img src="img/thumb_s2.png" />
+            <img src="img/thumb_s2.png" />
+        </div>
+    </div>
+    <script>
+            $(document).ready(function () {
+                var i = $(".js_fontsize").text().length;
+                if( i < 11 ){
+                    $(".js_fontsize").css("font-size","1.9em")
+                }else if( i >= 11, i < 13 ){
+                    $(".js_fontsize").css("font-size","1.6em")
+                }else if( i >= 13, i < 15 ){
+                    $(".js_fontsize").css("font-size","1.4em")
+                }else if( i >= 15, i < 17 ){
+                    $(".js_fontsize").css("font-size","1.2em")
+                }else if( i >= 17, i < 19 ){
+                    $(".js_fontsize").css("font-size","1em")
+                }else if( i >= 19 ){
+                    $(".js_fontsize").css("font-size","0.98em")
+                }
+            })
+    </script>
+</body>
+</html>

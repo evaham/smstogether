@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <link href="css/base_reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/StyleSheet.css?2018122002" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery-1.12.0.min.js"></script>
+
+    <script src="/Common/jquery.blImageCenter.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/TSMS/js/togethers.js"></script>
+
+    <script type="text/javascript">
+        var CommonController = function () { };
+
+        CommonController.fnViewLink = function (code) {
+            var url = 'Link_View.aspx';
+            var w = window.open("", "PageLink", "width=400, height=750, toolbar=no, scrollbars=yes");
+            var html = '<form action=\'' + url + '\' id=\'formPageLink\' method=\'post\' target=\'_self\'>';
+            html += '<input type=\'hidden\' name=\'lcode\' id=\'lcode\' value=\'' + code + '\'>';
+            html += '</form>';
+            $(w.document.body).html(html);
+            $(w.document.body).find('form').submit();
+            return false;
+        }
+        CommonController.fnInputConfirm = function (confirmMsg) {
+            var msg = $('#txtMsg').val();
+            if (msg === '') {
+                alert("내용을 입력해주세요.");
+                return false;
+            }
+
+            return confirm(confirmMsg);
+        }
+        CommonController.fnClose = function () {
+            self.close();
+            return false;
+        }
+    </script>
+
+    <!--// 이미지 파일 관련-->
+    <script type="text/javascript">
+        function readURL(input, idx) {
+            if (input.files && input.files[0]) {
+
+                var file = input.files[0];
+                if (file.size > 5 * 1024 * 1024) {
+                    alert("5MB를 초과하는 이미지입니다. 용량을 조절하신 후 다시 등록해주세요.");
+                    input.value = '';
+
+                    return false;
+                }
+
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#img' + idx).attr('src', e.target.result);
+                    $('#img' + idx).centerImage();
+
+                    $('#div_for_file' + idx).show();
+                    $('#hdImageHub' + idx).val('');
+
+                    if (idx == 1) {
+                        $('#hdDelThumb').val("0");
+                    }
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        CommonController.fnImgReset = function (objId, idx) {
+            var input = $("#" + objId);
+            input.value = '';
+            $('#hdImageHub' + idx).val('');
+
+            $('#div_for_file' + idx).hide();
+
+            var code = $("#hdlfcode" + idx).val();
+            if (code != '0') {
+                $("#hdlfcode" + idx).value = '0';
+
+
+                var codelist = $("#hdDelCodeList").val();
+                $("#hdDelCodeList").val(codelist + "," + code);
+
+                if (idx == 1) {
+                    $("#hdDelThumb").val("1");
+                }
+            }
+        }
+        $(function () { CommonController.fnOnLoad(); });
+        CommonController.fnOnLoad = function () {
+            $(".linkpopup__thumb img").centerImage();
+        }
+    </script>
+
+    <!--// 이미지 허브 -->
+    <script type="text/javascript">
+        var current_idx = '0';
+        CommonController.fnImageHubList = function (idx) {
+            var pm = $('#hdParam40').val();
+            var url = $('#hdImageHubUrl').val();
+            var returnurl = $('#hdReturnUrl').val();
+            var param1 = 'CommonController.fnImageHubSelect|' + returnurl + '|PAGELINK';
+            var w = window.open("", "ImageHub", "width=760, height=750, toolbar=no, scrollbars=yes");
+            var html = '<form action=\'' + url + '\' id=\'formImageHub\' method=\'post\' target=\'_self\'>';
+            html += '<input type=\'hidden\' name=\'work\' id=\'work\' value=\'IMAGEHUB\'>';
+            html += '<input type=\'hidden\' name=\'pm\' id=\'pm\' value=\'' + pm + '\'>';
+            html += '<input type=\'hidden\' name=\'param1\' id=\'param1\' value=\'' + param1 + '\'>';
+            html += '</form>';
+            $(w.document.body).html(html);
+            $(w.document.body).find('form').submit();
+            current_idx = idx;
+            return false;
+        }
+
+        CommonController.fnImageHubSelect = function (url, code) {
+            var idx = current_idx;
+            $('#img' + idx).attr('src', url);
+            $('#img' + idx).centerImage();
+
+            $('#hdImageHub' + idx).val(url);
+            $('#div_for_file' + idx).show();
+
+            if (idx == 1) {
+                $('#hdDelThumb').val("0");
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        .linkpopup__thumb label,
+        .linkpopup__thumb img
+         { width:100%; height:100%; }
+    </style>
+</head>
+<body class="bg_gray">
+    <form method="post" action="./Link_Input.aspx" id="form1" enctype="multipart/form-data">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU0MTU3NDYwNA9kFgICAw8WAh4HZW5jdHlwZQUTbXVsdGlwYXJ0L2Zvcm0tZGF0YRYSAgMPFgIeBFRleHQFwQM8bGFiZWwgaWQ9ImxhYmVsX2Zvcl9maWxlMSIgZm9yPSJmaWxlMSIgLz48ZGl2IGlkPSJkaXZfZm9yX2ZpbGUxIiBzdHlsZT0iZGlzcGxheTpub25lOyB3aWR0aDoxMDAlOyBoZWlnaHQ6MTAwJTsgIj4gPGltZyBjbGFzcz0ibGlua3BvcHVwX19pbWciIGlkPSJpbWcxIiBhbHQ9IiAiIHNyYz0iIiAvPjxhIGNsYXNzPSJsaW5rcG9wdXBfX2Nsb3NlIiBvbmNsaWNrPSJDb21tb25Db250cm9sbGVyLmZuSW1nUmVzZXQoJ2ZpbGUxJywgMSk7ICI+PC9hPjxpbnB1dCB0eXBlPSJoaWRkZW4iIGlkPSJoZGxmY29kZTEiIHZhbHVlPSIwIiAvPjxpbnB1dCB0eXBlPSJoaWRkZW4iIGlkPSJoZGloY29kZTEiIHZhbHVlPSIwIiAvPjwvZGl2PjxpbnB1dCB0eXBlPSJidXR0b24iIHZhbHVlPSLsnbTrr7jsp4Dtl4jruIwiIG9uY2xpY2s9IkNvbW1vbkNvbnRyb2xsZXIuZm5JbWFnZUh1Ykxpc3QoMSk7IiAvPmQCBQ8WAh8BBcEDPGxhYmVsIGlkPSJsYWJlbF9mb3JfZmlsZTIiIGZvcj0iZmlsZTIiIC8+PGRpdiBpZD0iZGl2X2Zvcl9maWxlMiIgc3R5bGU9ImRpc3BsYXk6bm9uZTsgd2lkdGg6MTAwJTsgaGVpZ2h0OjEwMCU7ICI+IDxpbWcgY2xhc3M9Imxpbmtwb3B1cF9faW1nIiBpZD0iaW1nMiIgYWx0PSIgIiBzcmM9IiIgLz48YSBjbGFzcz0ibGlua3BvcHVwX19jbG9zZSIgb25jbGljaz0iQ29tbW9uQ29udHJvbGxlci5mbkltZ1Jlc2V0KCdmaWxlMicsIDIpOyAiPjwvYT48aW5wdXQgdHlwZT0iaGlkZGVuIiBpZD0iaGRsZmNvZGUyIiB2YWx1ZT0iMCIgLz48aW5wdXQgdHlwZT0iaGlkZGVuIiBpZD0iaGRpaGNvZGUyIiB2YWx1ZT0iMCIgLz48L2Rpdj48aW5wdXQgdHlwZT0iYnV0dG9uIiB2YWx1ZT0i7J2066+47KeA7ZeI67iMIiBvbmNsaWNrPSJDb21tb25Db250cm9sbGVyLmZuSW1hZ2VIdWJMaXN0KDIpOyIgLz5kAgcPFgIfAQXBAzxsYWJlbCBpZD0ibGFiZWxfZm9yX2ZpbGUzIiBmb3I9ImZpbGUzIiAvPjxkaXYgaWQ9ImRpdl9mb3JfZmlsZTMiIHN0eWxlPSJkaXNwbGF5Om5vbmU7IHdpZHRoOjEwMCU7IGhlaWdodDoxMDAlOyAiPiA8aW1nIGNsYXNzPSJsaW5rcG9wdXBfX2ltZyIgaWQ9ImltZzMiIGFsdD0iICIgc3JjPSIiIC8+PGEgY2xhc3M9Imxpbmtwb3B1cF9fY2xvc2UiIG9uY2xpY2s9IkNvbW1vbkNvbnRyb2xsZXIuZm5JbWdSZXNldCgnZmlsZTMnLCAzKTsgIj48L2E+PGlucHV0IHR5cGU9ImhpZGRlbiIgaWQ9ImhkbGZjb2RlMyIgdmFsdWU9IjAiIC8+PGlucHV0IHR5cGU9ImhpZGRlbiIgaWQ9ImhkaWhjb2RlMyIgdmFsdWU9IjAiIC8+PC9kaXY+PGlucHV0IHR5cGU9ImJ1dHRvbiIgdmFsdWU9IuydtOuvuOyngO2XiOu4jCIgb25jbGljaz0iQ29tbW9uQ29udHJvbGxlci5mbkltYWdlSHViTGlzdCgzKTsiIC8+ZAIJDxYCHwEFwQM8bGFiZWwgaWQ9ImxhYmVsX2Zvcl9maWxlNCIgZm9yPSJmaWxlNCIgLz48ZGl2IGlkPSJkaXZfZm9yX2ZpbGU0IiBzdHlsZT0iZGlzcGxheTpub25lOyB3aWR0aDoxMDAlOyBoZWlnaHQ6MTAwJTsgIj4gPGltZyBjbGFzcz0ibGlua3BvcHVwX19pbWciIGlkPSJpbWc0IiBhbHQ9IiAiIHNyYz0iIiAvPjxhIGNsYXNzPSJsaW5rcG9wdXBfX2Nsb3NlIiBvbmNsaWNrPSJDb21tb25Db250cm9sbGVyLmZuSW1nUmVzZXQoJ2ZpbGU0JywgNCk7ICI+PC9hPjxpbnB1dCB0eXBlPSJoaWRkZW4iIGlkPSJoZGxmY29kZTQiIHZhbHVlPSIwIiAvPjxpbnB1dCB0eXBlPSJoaWRkZW4iIGlkPSJoZGloY29kZTQiIHZhbHVlPSIwIiAvPjwvZGl2PjxpbnB1dCB0eXBlPSJidXR0b24iIHZhbHVlPSLsnbTrr7jsp4Dtl4jruIwiIG9uY2xpY2s9IkNvbW1vbkNvbnRyb2xsZXIuZm5JbWFnZUh1Ykxpc3QoNCk7IiAvPmQCCw8WAh8BBcEDPGxhYmVsIGlkPSJsYWJlbF9mb3JfZmlsZTUiIGZvcj0iZmlsZTUiIC8+PGRpdiBpZD0iZGl2X2Zvcl9maWxlNSIgc3R5bGU9ImRpc3BsYXk6bm9uZTsgd2lkdGg6MTAwJTsgaGVpZ2h0OjEwMCU7ICI+IDxpbWcgY2xhc3M9Imxpbmtwb3B1cF9faW1nIiBpZD0iaW1nNSIgYWx0PSIgIiBzcmM9IiIgLz48YSBjbGFzcz0ibGlua3BvcHVwX19jbG9zZSIgb25jbGljaz0iQ29tbW9uQ29udHJvbGxlci5mbkltZ1Jlc2V0KCdmaWxlNScsIDUpOyAiPjwvYT48aW5wdXQgdHlwZT0iaGlkZGVuIiBpZD0iaGRsZmNvZGU1IiB2YWx1ZT0iMCIgLz48aW5wdXQgdHlwZT0iaGlkZGVuIiBpZD0iaGRpaGNvZGU1IiB2YWx1ZT0iMCIgLz48L2Rpdj48aW5wdXQgdHlwZT0iYnV0dG9uIiB2YWx1ZT0i7J2066+47KeA7ZeI67iMIiBvbmNsaWNrPSJDb21tb25Db250cm9sbGVyLmZuSW1hZ2VIdWJMaXN0KDUpOyIgLz5kAg0PFgIfAQXBAzxsYWJlbCBpZD0ibGFiZWxfZm9yX2ZpbGU2IiBmb3I9ImZpbGU2IiAvPjxkaXYgaWQ9ImRpdl9mb3JfZmlsZTYiIHN0eWxlPSJkaXNwbGF5Om5vbmU7IHdpZHRoOjEwMCU7IGhlaWdodDoxMDAlOyAiPiA8aW1nIGNsYXNzPSJsaW5rcG9wdXBfX2ltZyIgaWQ9ImltZzYiIGFsdD0iICIgc3JjPSIiIC8+PGEgY2xhc3M9Imxpbmtwb3B1cF9fY2xvc2UiIG9uY2xpY2s9IkNvbW1vbkNvbnRyb2xsZXIuZm5JbWdSZXNldCgnZmlsZTYnLCA2KTsgIj48L2E+PGlucHV0IHR5cGU9ImhpZGRlbiIgaWQ9ImhkbGZjb2RlNiIgdmFsdWU9IjAiIC8+PGlucHV0IHR5cGU9ImhpZGRlbiIgaWQ9ImhkaWhjb2RlNiIgdmFsdWU9IjAiIC8+PC9kaXY+PGlucHV0IHR5cGU9ImJ1dHRvbiIgdmFsdWU9IuydtOuvuOyngO2XiOu4jCIgb25jbGljaz0iQ29tbW9uQ29udHJvbGxlci5mbkltYWdlSHViTGlzdCg2KTsiIC8+ZAIPDxAPZBYCHgVhbGlnbgUGY2VudGVyZGRkAhMPDxYCHg1PbkNsaWVudENsaWNrBU5yZXR1cm4gQ29tbW9uQ29udHJvbGxlci5mbklucHV0Q29uZmlybSgn66eB7YGs66W8IOyggOyepe2VmOyLnOqyoOyKteuLiOq5jD8nKTtkZAIVDw8WAh8DBSJyZXR1cm4gQ29tbW9uQ29udHJvbGxlci5mbkNsb3NlKCk7ZGRkoTGWbbBT1ptPksN5UIfOzCoCmvevWFdOzljHJ40S14E=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E17782BA" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABWc3A7+S329cZXFjPZ9BTlQA3sa9CLAiY0NRgwF9EJQGtuTM6ThiMFSeVAveopxrwSj5llAhvlwtP8X/lzjGU28Z7QkK1QqxMXSfFsGfdzanJZYgDymPir0Zp4mFYzbkIj463fugIQRc/cSMEVxsmEoYFp+qOrE1rZxeqOI7Pw2VOVZznJtjFf1hVxQ3k327fOGapGMVqyzCom04KjgkE7iTfehO9/vWun8SlH7jkQReQ9NLwhmG2TU+87yMidA5cdmnRiXNprtfKgQ3214qO5sGbpa33fc/NsK3ZbwJUJRoGT1YwLVsTXq99H4WVR1RVKKCA3pc2r0JZBFTgMNb0dJuP/rzWJgJWxnjrvGaJjRD8ok2TuYMKlauEF/xm/PVWg+CYHLjFtZizMpTgonNi5HbX04Vus7KUKnF4vPDatvfJKxrIeCCpqAe/HgPlkk170XC70e4TGB0wHQyJg1R+2f8vQGxQ8PaCRnYC4B8aeVIg==" />
+</div>
+    <div class="wrap_popup">
+        <div class="linkpopup">
+            <p class="linkpopup__tit"><img alt="" class="linkpopup__ico" src="/TSMS/img/ico_round.gif" />링크 만들기</p>
+            <!-- Text Area -->
+            <textarea name="txtMsg" rows="2" cols="20" id="txtMsg" class="linkpopup__tf">
+</textarea>
+            <!-- Text Area -->
+
+            <!-- Image Area -->
+            <table class="linkpopup__tbl_layout">
+                <tr>
+                    <td>
+                        <div class="linkpopup__thumb">
+                            <div id="div_for_file1" style="display:none; width:100%; height:100%; ">
+                                <img class="linkpopup__img" id="img1" alt=" " src="" />
+                                <a class="linkpopup__close" onclick="CommonController.fnImgReset('file1', 1); "></a>
+                                <input type="hidden" id="hdlfcode1" value="0" />
+                                <input type="hidden" id="hdihcode1" value="0" />
+                            </div>
+                        </div>
+                        <label id="label_for_file1" for="file1" >로컬</label>
+                        <input type="button" value="이미지허브" onclick="CommonController.fnImageHubList(1);" />
+
+                    </td>
+                    <td><div class="linkpopup__thumb"><label id="label_for_file2" for="file2" /><div id="div_for_file2" style="display:none; width:100%; height:100%; "> <img class="linkpopup__img" id="img2" alt=" " src="" /><a class="linkpopup__close" onclick="CommonController.fnImgReset('file2', 2); "></a><input type="hidden" id="hdlfcode2" value="0" /><input type="hidden" id="hdihcode2" value="0" /></div><input type="button" value="이미지허브" onclick="CommonController.fnImageHubList(2);" /></div></td>
+                    <td><div class="linkpopup__thumb"><label id="label_for_file3" for="file3" /><div id="div_for_file3" style="display:none; width:100%; height:100%; "> <img class="linkpopup__img" id="img3" alt=" " src="" /><a class="linkpopup__close" onclick="CommonController.fnImgReset('file3', 3); "></a><input type="hidden" id="hdlfcode3" value="0" /><input type="hidden" id="hdihcode3" value="0" /></div><input type="button" value="이미지허브" onclick="CommonController.fnImageHubList(3);" /></div></td>
+                </tr>
+                <tr>
+                    <td><div class="linkpopup__thumb"><label id="label_for_file4" for="file4" /><div id="div_for_file4" style="display:none; width:100%; height:100%; "> <img class="linkpopup__img" id="img4" alt=" " src="" /><a class="linkpopup__close" onclick="CommonController.fnImgReset('file4', 4); "></a><input type="hidden" id="hdlfcode4" value="0" /><input type="hidden" id="hdihcode4" value="0" /></div><input type="button" value="이미지허브" onclick="CommonController.fnImageHubList(4);" /></div></td>
+                    <td><div class="linkpopup__thumb"><label id="label_for_file5" for="file5" /><div id="div_for_file5" style="display:none; width:100%; height:100%; "> <img class="linkpopup__img" id="img5" alt=" " src="" /><a class="linkpopup__close" onclick="CommonController.fnImgReset('file5', 5); "></a><input type="hidden" id="hdlfcode5" value="0" /><input type="hidden" id="hdihcode5" value="0" /></div><input type="button" value="이미지허브" onclick="CommonController.fnImageHubList(5);" /></div></td>
+                    <td><div class="linkpopup__thumb"><label id="label_for_file6" for="file6" /><div id="div_for_file6" style="display:none; width:100%; height:100%; "> <img class="linkpopup__img" id="img6" alt=" " src="" /><a class="linkpopup__close" onclick="CommonController.fnImgReset('file6', 6); "></a><input type="hidden" id="hdlfcode6" value="0" /><input type="hidden" id="hdihcode6" value="0" /></div><input type="button" value="이미지허브" onclick="CommonController.fnImageHubList(6);" /></div></td>
+                </tr>
+            </table>
+            <!-- Image Area -->
+
+            <p class="linkpopup__txt">장당 5MB 이하의 jpg, gif, png 만 등록이 가능합니다.</p>
+
+
+            <div>
+                <table id="rbContentTemplateType" align="center">
+	<tr>
+		<td><input id="rbContentTemplateType_0" type="radio" name="rbContentTemplateType" value="0" checked="checked" /><label for="rbContentTemplateType_0">이미지를 상단에 배치</label></td>
+	</tr><tr>
+		<td><input id="rbContentTemplateType_1" type="radio" name="rbContentTemplateType" value="1" /><label for="rbContentTemplateType_1">텍스트를 상단에 배치</label></td>
+	</tr>
+</table>
+            </div>
+
+
+            <span id="lbErrorMsg" style="color:Red;"></span>
+            <div class="linkpopup__btngroup">
+                <input type="submit" name="btnSave" value="저장" onclick="return CommonController.fnInputConfirm(&#39;링크를 저장하시겠습니까?&#39;);" id="btnSave" class="linkpopup__btn" />
+                <input type="submit" name="btnCancel" value="취소" onclick="return CommonController.fnClose();" id="btnCancel" class="linkpopup__btn linkpopup__btn--line" />
+            </div>
+        </div>
+
+        <div style="display:none; ">
+            <input type="submit" name="btnAppendDelCode" value="삭제대기열추가" id="btnAppendDelCode" />
+
+            <input type="file" name="file1" id="file1" onchange="if(this.value != &#39;&#39;){ if(fileCheck(&#39;file1&#39;)){readURL(this, 1);} else{this.value=&#39;&#39;;}}" />
+            <input type="file" name="file2" id="file2" onchange="if(this.value != &#39;&#39;){ if(fileCheck(&#39;file2&#39;)){readURL(this, 2);} else{this.value=&#39;&#39;;}}" />
+            <input type="file" name="file3" id="file3" onchange="if(this.value != &#39;&#39;){ if(fileCheck(&#39;file3&#39;)){readURL(this, 3);} else{this.value=&#39;&#39;;}}" />
+            <input type="file" name="file4" id="file4" onchange="if(this.value != &#39;&#39;){ if(fileCheck(&#39;file4&#39;)){readURL(this, 4);} else{this.value=&#39;&#39;;}}" />
+            <input type="file" name="file5" id="file5" onchange="if(this.value != &#39;&#39;){ if(fileCheck(&#39;file5&#39;)){readURL(this, 5);} else{this.value=&#39;&#39;;}}" />
+            <input type="file" name="file6" id="file6" onchange="if(this.value != &#39;&#39;){ if(fileCheck(&#39;file6&#39;)){readURL(this, 6);} else{this.value=&#39;&#39;;}}" />
+
+            <input type="hidden" name="hdImageHub1" id="hdImageHub1" />
+            <input type="hidden" name="hdImageHub2" id="hdImageHub2" />
+            <input type="hidden" name="hdImageHub3" id="hdImageHub3" />
+            <input type="hidden" name="hdImageHub4" id="hdImageHub4" />
+            <input type="hidden" name="hdImageHub5" id="hdImageHub5" />
+            <input type="hidden" name="hdImageHub6" id="hdImageHub6" />
+        </div>
+
+        <input type="hidden" name="hdMartCode" id="hdMartCode" value="1000" />
+        <input type="hidden" name="hdLinkCode" id="hdLinkCode" value="0" />
+        <input type="hidden" name="hdDelCodeList" id="hdDelCodeList" />
+        <input type="hidden" name="hdDelThumb" id="hdDelThumb" value="0" />
+
+        <!-- 이미지허브 데이터 -->
+        <input type="hidden" name="hdImageHubUrl" id="hdImageHubUrl" value="http://192.168.10.154:2030/TPOP/AppWeb.aspx" />
+        <input type="hidden" name="hdParam40" id="hdParam40" value="2400037000011100000037055507470301480814" />
+        <input type="hidden" name="hdReturnUrl" id="hdReturnUrl" value="http://192.168.10.154:2070/Support/ImageHub_Res.aspx" />
+    </div>
+    </form>
+</body>
+</html>
