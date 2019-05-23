@@ -558,7 +558,7 @@ label {display: inline-block;margin-bottom: 2px;}
     &__emoji{width:21px; height: 21px; vertical-align: top}
 
     &__sendwrap{margin: 0 auto}
-    &__sendtxt{padding: 10px; border:1px solid #eee; font-size: 18px; background: #ffff; color:#333333; text-align: center;}
+    &__sendtxt{padding: 10px; border:1px solid #eee; font-size: 18px; color:#333333; text-align: center;}
     &__sendbtn{display: block; width:100%; margin: 0 auto 10px; padding:10px 15px; border:1px solid #f4d544; border-radius: 3px; font-size: 18px; font-weight: bold; background: #ffdf48; color:#403811;
         &:hover{background:#f4d202}
     }
@@ -730,11 +730,13 @@ label {display: inline-block;margin-bottom: 2px;}
 // }
 
 
-.kakaopopup{ width:450px; margin: 10px auto; padding: 10px; border:1px solid #ccc; border-radius: 5px; background: #ffffff;
+.kakaopopup{ width:600px; margin: 10px auto; padding: 10px; border:1px solid #ccc; border-radius: 5px; background: #ffffff;
     &__box { margin: 5px 0; padding: 10px 15px; border: 1px solid #e4e4e4; background: #fbfbfb }
-    &__tit{ margin: 0 0 5px; font-size: 15px; font-weight: bold}
-    &__txt{ display: inline-block; margin-top: 5px; font-size: 13px; color:#7f7f7f;}
-    &__info{ display: inline-block; margin-top: 5px; font-size: 13px; font-weight: bold; color:#1c7ed6;}
+    &__tit{ margin: 0 0 5px; font-size: 15px; font-weight: bold; }
+    &__txt{ margin-top: 5px;  color:#666;}
+    &__info{ display: inline-block; position: relative; margin: 10px 0; padding-left:40px; font-weight: bold; color:#666; line-height: 1.2;
+        > em{ display: inline-block; position: absolute; top:0; left: 0; padding: 1px 4px; border-radius: 3px; background:#d9534f; color:#fff; }
+    }
     &__dl {
         > dt {float: left; margin-right: 5px; color:#777}
         > dd {}
@@ -760,9 +762,12 @@ label {display: inline-block;margin-bottom: 2px;}
             &:hover { background-image: url(../img/img_button10_hover.png)}
         }
     }
-    &__radio{display: block; margin: 10px 0 5px; text-align: center; cursor: pointer;
+    &__radio{display: inline-block; margin:0 5px; cursor: pointer;
         &+.linkpopup__radio{margin-top: 5px;}
         input{margin:-4px 5px 0 0}
+        input:checked{
+            + span {font-weight: bolder}
+        }
     }
     &__innerbtnbox {opacity: 0; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; position: absolute; top:0; right: 0; bottom:0; left:0; padding: 15px 0 0; background: #7c7c7d; background:rgba(0,0,0,0.5);
         &:hover{opacity: 1; -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100%)"; transition: .2s}

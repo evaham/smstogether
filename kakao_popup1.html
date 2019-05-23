@@ -16,36 +16,52 @@
         <div class="kakaopopup">
             <p class="kakaopopup__tit"><img class="kakaopopup__ico" src="img/ico_round.gif" />실패 건 대체발송 설정</p>
             <div class="kakaopopup__box">
-                <p class="kakaopopup__info">매장 플러스 친구에 친구추가 하지 않은 회원에게는 친구톡이 발송되지 않으며, 발송실패로 처리됩니다.(카카오정책)</p>
-                <p class="kakaopopup__txt"><span>예시</span>500명 대상 발송 시 명만친구일 경우 명에게만발송되며 친구가 아닌 나머지 명은미발송및 발송실패로처리됨</p>
-                <p class="kakaopopup__info">투게더 카카오 친구톡은 실패 건에 대해 다른 발송수단으로 자동 대체발송이 가능합니다.(이미지링크, SMS, LMS)</p>
-                <p class="kakaopopup__txt"><span>예시</span>실패 처리된 친구가 아닌 명 회원에게이미지링크문자 등으로 대체발송가능 친구톡 성공 건 발송비용 실패건 대체수단별발송비용합산으로 머니차감됨 전체 실패 가정 최대 발송비용에해당하는 머니 보유 시에만발송 가능 대체발송건은
-                대표기 의무 및 수신거부 번호가 자동으로포함되어 발송됩니다.</p>
+                <p>
+                    <b class="text_blue">매장 플러스 친구에 친구추가 하지 않은 회원에게는<br /> 친구톡이 발송되지 않으며, 발송실패로 처리됩니다.(카카오정책)</b><br />
+                    <span class="kakaopopup__info"><em>예시</em> 500명 대상 발송 시 300명만 친구일 경우 300명에게 만발송되며 <br />친구가 아닌 나머지 200명은 미발송 및 발송실패로 처리됨</span><br />
+                    <b class="text_blue">투게더 카카오 친구톡은 실패 건에 대해 다른 발송수단으로 <br />자동 대체발송이 가능합니다.(이미지링크, SMS, LMS)</b><br />
+                    <span class="kakaopopup__info"><em>예시</em> 실패 처리된, 친구가 아닌 200명 회원에게 이미지링크 문자 등으로 대체발송 가능 <br />친구톡 성공 건 발송비용 + 실패건 대체수단별 발송비용 합산으로 TS머니 차감됨 <br />전체 실패 가정, 최대 발송비용에 해당하는 TS머니 보유 시에만 발송 가능 <br />대체발송 건은 5대표기 의무 및 수신거부 번호가 자동으로 포함되어 발송됩니다.</span>
+                </p>
             </div>
-            <div class="kakaopopup__box text_center">
-                <label class="kakaopopup__radio">
-                    <input type="radio" name="group1" /> 대체발송 안함
-                </label>
-                <label class="kakaopopup__radio">
-                    <input type="radio" name="group1" /> 대체발송 설정
-                </label>
-            </div>
-
-            
             <div class="kakaopopup__box">
-                <img src="" />
-                <div class="kakaopopup__radio">
-                    <label class="kakaopopup__radio">
-                        <input type="radio" /> SMS로 발송
-                    </label>
-                    <p class="kakaopopup__txt">본문에 링크만 표기 이미지 텍스트 모두 URL 링크로 삽입</p>
-                </div>
-                <div>
-                    <label class="kakaopopup__radio">
-                        <input type="radio" /> LMS로 발송
-                    </label>
-                    <p class="kakaopopup__txt">본문에 텍스트만 표기 이미지가 있을 경우 URL 링크로 삽입</p>
-                </div>
+                <table class="kakaopopup__tbl_layout">
+                    <tr>
+                        <td>
+                            <label class="kakaopopup__radio">
+                                <input type="radio" name="group1" value="1" checked="checked" /> <span>대체발송 안함</span>
+                            </label>
+                        </td>
+                        <td>
+                            <label class="kakaopopup__radio">
+                                <input type="radio" name="group1" value="2" /> <span>대체발송 설정</span>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="kakaopopup__box">
+                <table class="kakaopopup__tbl_layout">
+                    <tr>
+                        <td colspan="2">
+                            <img src="./img/img_infophone.png" class="js_infophone" style="width:100%;" />
+                            <img src="./img/img_infophone2.png" class="js_infophone2" style="display: none; width:100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="kakaopopup__radio">
+                                <input type="radio" name="group2"  disabled=""/> <span>SMS로 발송</span>
+                            </label>
+                            <p class="kakaopopup__txt"><b>본문에 링크만 표기</b><br />이미지 텍스트 모두 <br />URL 링크로 삽입</p>
+                        </td>
+                        <td>
+                            <label class="kakaopopup__radio">
+                                <input type="radio" name="group2" disabled="" /> <span>LMS로 발송</span>
+                            </label>
+                            <p class="kakaopopup__txt"><b>본문에 텍스트 표기</b><br />이미지가 있을 경우 <br />URL 링크로 삽입</p>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div class="kakaopopup__btngroup">
                 <button class="linkpopup__btn">저장</button>
@@ -53,5 +69,22 @@
         </div>
     </div>
 </body>
+<script>
+    /* 라디오버튼 이벤트 */
+    $(document).ready(function () {
+        $("input[name=group1]").click(function () {
+            var radioCheck1 = this.value;
+            if (radioCheck1 == 1) {
+                $(".js_infophone").show()
+                $(".js_infophone2").hide()
+                $("input[name=group2]").attr('disabled', true);
 
+            } else {
+                $(".js_infophone").hide()
+                $(".js_infophone2").show()
+                $("input[name=group2]").attr('disabled', false);
+            }
+        });
+    })
+</script>
 </html>
